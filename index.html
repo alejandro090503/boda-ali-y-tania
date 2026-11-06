@@ -29,7 +29,7 @@
 <link rel="preload" as="image" href="hero-mar.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Pinyon+Script&family=Italiana&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Pinyon+Script&family=Italiana&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
@@ -55,7 +55,7 @@
   --serif:'Cormorant Garamond',Georgia,serif;
   --script:'Pinyon Script',cursive;
   --italiana:'Italiana',serif;
-  --sans:'Inter Tight',system-ui,sans-serif;
+  --sans:'Cormorant Garamond',Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:#152b66}
@@ -1782,18 +1782,18 @@ html{background:#152b66}
 .hs-dot{flex-shrink:0;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-family:var(--sans);font-size:14px;font-weight:600;box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(30,58,137,.25)}
 /* marcadores MapLibre */
 .hs-pin{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;cursor:pointer;
-  font-family:'Inter Tight',sans-serif;font-size:14px;font-weight:600;border:2.5px solid #fff;box-shadow:0 6px 16px rgba(21,43,102,.45);transition:transform .3s,background .3s}
+  font-family:'Cormorant Garamond',Georgia,serif;font-size:14px;font-weight:600;border:2.5px solid #fff;box-shadow:0 6px 16px rgba(21,43,102,.45);transition:transform .3s,background .3s}
 .hs-pin.is-on{transform:scale(1.28);background:var(--sea-deep)}
 .hs-venue{display:flex;flex-direction:column;align-items:center;pointer-events:auto;cursor:pointer}
 .hs-venue-tag{position:relative;display:flex;align-items:center;gap:7px;white-space:nowrap;padding:8px 14px;border-radius:999px;background:#FBF8F2;color:var(--accent-deep);
-  font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 8px 20px rgba(21,43,102,.35);border:1px solid rgba(176,141,87,.5)}
+  font-family:'Cormorant Garamond',Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 8px 20px rgba(21,43,102,.35);border:1px solid rgba(176,141,87,.5)}
 .hs-venue-tag svg{width:14px;height:14px;color:var(--gold-deep)}
 .hs-venue-tag::after{content:"";position:absolute;left:50%;bottom:-6px;width:12px;height:12px;background:#FBF8F2;transform:translateX(-50%) rotate(45deg);border-right:1px solid rgba(176,141,87,.5);border-bottom:1px solid rgba(176,141,87,.5)}
 .hs-venue-dot{width:12px;height:12px;margin-top:9px;border-radius:50%;background:var(--gold);border:2px solid #fff;animation:hsPulse 2s ease-out infinite}
 @keyframes hsPulse{0%{box-shadow:0 0 0 0 rgba(176,141,87,.7)}100%{box-shadow:0 0 0 14px rgba(176,141,87,0)}}
 .hs-pop{font-family:'Cormorant Garamond',serif;color:var(--accent-deep)}
 .hs-pop b{display:block;font-family:'Playfair Display',serif;font-size:17px;font-weight:500}
-.hs-pop span{display:block;font-family:'Inter Tight',sans-serif;font-size:13px;margin-top:3px;color:var(--ink-soft)}
+.hs-pop span{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;margin-top:3px;color:var(--ink-soft)}
 .maplibregl-popup-content{border-radius:14px!important;padding:12px 16px!important;box-shadow:0 14px 30px rgba(21,43,102,.3)!important}
 .maplibregl-ctrl-group{border-radius:12px!important;box-shadow:0 6px 16px rgba(21,43,102,.18)!important}
 .maplibregl-ctrl-attrib{font-size:10px}
@@ -1903,6 +1903,260 @@ body:not(.nv-on) .nv-bar{pointer-events:none}
 @media (prefers-reduced-motion:reduce){
   .hero-bg,.hero-waves .hw,.bubble,.glint,.loc-pin::after,.locs .loc-card,.hs-card,.dc-look,.dc-look-arrow,.dress-sug .swatch,.rsvp-btn-jen,.hs-venue-dot{animation:none!important}
 }
+/* ── HOSPEDAJE · CARRUSEL (formato boda-adriana, paleta Tania & Ali) ── */
+.hosp-carousel{position:relative;max-width:380px;margin:30px auto 0}
+.hosp-viewport{overflow:hidden}
+.hosp-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.hosp-slide{flex:0 0 100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;padding:8px 30px}
+.hosp-photo{width:200px;height:200px;border-radius:50%;overflow:hidden;border:3px solid rgba(30,58,137,.3);box-shadow:0 12px 34px rgba(21,43,102,.18);margin-bottom:22px}
+.hosp-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.hosp-arrow{position:absolute;top:108px;transform:translateY(-50%);width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.7);border:1px solid rgba(30,58,137,.25);border-radius:50%;cursor:pointer;color:var(--accent);z-index:2;padding:0;backdrop-filter:blur(3px)}
+.hosp-arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}
+.hosp-arrow.prev{left:-2px}
+.hosp-arrow.next{right:-2px}
+.hosp-dots{display:flex;justify-content:center;gap:8px;margin-top:22px}
+.hosp-dots button{width:8px;height:8px;border-radius:50%;border:none;background:rgba(30,58,137,.3);cursor:pointer;padding:0;transition:background .25s,transform .25s}
+.hosp-dots button.active{background:var(--accent);transform:scale(1.3)}
+.hosp-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:var(--ink);margin-bottom:6px}
+.hosp-city{font-family:var(--sans);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);opacity:.8;margin-bottom:16px}
+.hosp-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-hosp{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1.5px solid var(--accent);border-radius:50px;color:var(--accent);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14.5px;letter-spacing:.5px;text-decoration:none;background:transparent;transition:background .25s,color .25s}
+.btn-hosp:hover{background:var(--accent);color:#fff}
+.btn-hosp svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.hosp-carousel[hidden]{display:none!important}
+.hosp-slide{animation:none}
+.hosp-photo{border-color:rgba(176,141,87,.55)!important;animation:hospFloat 5.6s ease-in-out infinite}
+@keyframes hospFloat{0%,100%{translate:0 0}50%{translate:0 -6px}}
+.hosp-name{font-family:var(--display)!important;font-weight:500!important;font-size:24px!important;color:var(--accent-deep)!important}
+.hosp-city{font-size:12px!important;font-weight:600;color:var(--gold-deep)!important;opacity:1!important;margin-bottom:10px!important}
+.hosp-dist{font-family:var(--serif);font-weight:500;font-size:17px;color:var(--ink-soft);margin-bottom:18px}
+.hosp-dist strong{color:var(--accent-deep);font-weight:700}
+.btn-hosp{min-height:44px;font-size:16px!important;font-weight:600}
+@media (prefers-reduced-motion:reduce){.hosp-photo{animation:none}}
+/* ============ GIFTS — caja de regalo + carrusel ============ */
+.gifts{text-align:center}
+.gifts-head{margin-bottom:14px}
+
+.gifts-sub{max-width:520px;margin:0 auto;font-size:17px;line-height:1.6;color:var(--ink-soft);font-weight:400}
+
+/* --- La caja --- */
+.giftbox-stage{position:relative;margin:52px auto 0;max-width:560px;min-height:300px;display:flex;align-items:center;justify-content:center}
+.giftbox{
+  position:relative;width:190px;cursor:pointer;background:none;border:none;padding:0;
+  transition:transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.giftbox:hover{transform:translateY(-8px) scale(1.03)}
+.giftbox:focus-visible{outline:2px solid var(--gold-deep);outline-offset:10px;border-radius:6px}
+.giftbox.is-open{pointer-events:none}
+.giftbox svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 34px rgba(30,47,78,.28))}
+.giftbox-lid{transform-origin:50% 100%;transition:transform .6s cubic-bezier(.34,1.4,.5,1),opacity .55s ease}
+.giftbox.is-open .giftbox-lid{transform:translateY(-52px) rotate(-14deg);opacity:0}
+.giftbox-cta{
+  display:block;margin-top:22px;font-family:var(--italiana);font-size:12px;font-weight:600;
+  letter-spacing:.36em;text-transform:uppercase;padding-left:.36em;color:var(--gold-deep);
+  animation:giftPulse 2.6s ease-in-out infinite;transition:opacity .4s;
+}
+@keyframes giftPulse{0%,100%{opacity:.6}50%{opacity:1}}
+.giftbox-cta.is-hidden{opacity:0;animation:none}
+#confetti-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+
+/* --- Modal de regalo a pantalla completa --- */
+.gift-backdrop{
+  position:fixed;inset:0;z-index:900;
+  background:rgba(21,43,102,.55);
+  backdrop-filter:blur(16px) saturate(1.05);-webkit-backdrop-filter:blur(16px) saturate(1.05);
+  opacity:0;pointer-events:none;transition:opacity .45s ease;
+  display:flex;align-items:center;justify-content:center;
+  padding:clamp(16px,4vw,40px);
+}
+.gift-backdrop.is-open{opacity:1;pointer-events:auto}
+body.gift-locked{overflow:hidden}
+
+.gift-reveal{
+  position:relative;width:100%;max-width:560px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+  background:#FBF8F2;
+  backdrop-filter:blur(20px) saturate(1.1);-webkit-backdrop-filter:blur(20px) saturate(1.1);
+  border:1px solid rgba(176,141,87,.5);
+  padding:clamp(34px,5vw,46px) 0 clamp(26px,4vw,34px);
+  box-shadow:0 34px 90px rgba(15,23,40,.45),inset 0 0 0 1px rgba(255,255,255,.4);
+  opacity:0;transform:translateY(26px) scale(.94);
+  transition:opacity .5s ease,transform .55s cubic-bezier(.2,.7,.2,1);
+}
+.gift-backdrop.is-open .gift-reveal{opacity:1;transform:none}
+.gift-reveal::before{content:"";position:absolute;inset:9px;border:1px solid rgba(176,141,87,.2);pointer-events:none}
+.gift-reveal-eyebrow{font-family:var(--italiana);font-size:12px;font-weight:600;letter-spacing:.36em;text-transform:uppercase;padding-left:.36em;color:var(--gold-deep);margin-bottom:4px;text-align:center}
+
+.gift-close{
+  position:absolute;top:12px;right:12px;z-index:3;
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid rgba(176,141,87,.5);background:#FBF8F2;
+  color:var(--accent-deep);display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:background .3s,color .3s,transform .3s;padding:0;
+}
+.gift-close:hover{background:var(--accent-deep);color:var(--paper);transform:rotate(90deg)}
+.gift-close:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+.gift-close svg{width:16px;height:16px}
+
+/* --- Carrusel interno --- */
+.gr-viewport{overflow:hidden;position:relative}
+.gr-track{display:flex;align-items:stretch;transition:transform .55s cubic-bezier(.2,.7,.2,1);touch-action:pan-y}
+.gr-slide{flex:0 0 100%;padding:20px clamp(22px,5vw,40px) 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.gr-logo{height:46px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.gr-logo img{max-height:46px;max-width:200px;width:auto;height:auto;display:block}
+.gr-logo svg{height:38px;width:auto}
+.gr-title{font-family:var(--display);font-style:italic;font-size:26px;color:var(--accent-deep);margin-bottom:8px}
+.gr-desc{font-size:16px;line-height:1.6;color:var(--ink-soft);font-weight:400;margin-bottom:22px}
+.gr-desc b{font-weight:600;color:var(--accent-deep)}
+
+/* --- Transferencia: dos cuentas compactas --- */
+.gr-accounts{display:flex;flex-direction:column;gap:12px;width:100%;max-width:400px;margin:0 auto}
+.gr-acc{
+  display:flex;align-items:center;gap:14px;text-align:left;
+  padding:14px 16px;border:1px solid rgba(176,141,87,.34);
+  background:rgba(255,255,255,.42);border-radius:3px;
+}
+.gr-acc-info{flex:1;min-width:0}
+.gr-acc-n{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);padding-left:.16em;margin-bottom:3px}
+.gr-acc-c{font-size:15px;font-weight:600;color:var(--accent-deep);font-variant-numeric:tabular-nums;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gr-acc-btn{
+  flex-shrink:0;width:38px;height:38px;border-radius:50%;
+  border:1px solid rgba(176,141,87,.5);background:transparent;color:var(--gold-deep);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  transition:background .3s,color .3s,transform .3s;padding:0;
+}
+.gr-acc-btn:hover{background:var(--gold-deep);color:var(--paper);transform:scale(1.08)}
+.gr-acc-btn:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+.gr-acc-btn svg{width:15px;height:15px}
+.gr-acc-btn.is-copied{background:var(--accent-deep);color:var(--paper);border-color:var(--accent-deep)}
+.gr-bankname{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);padding-left:.3em;margin-bottom:14px}
+
+.gr-btn{
+  display:inline-block;padding:14px 30px;border:1px solid var(--accent-deep);background:transparent;
+  font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;
+  padding-left:calc(30px + .3em);color:var(--accent-deep);text-decoration:none;cursor:pointer;
+  position:relative;overflow:hidden;transition:color .45s ease;border-radius:2px;z-index:0;
+}
+.gr-btn::before{content:"";position:absolute;inset:0;background:var(--accent-deep);transform:translateY(101%);transition:transform .45s cubic-bezier(.2,.7,.2,1);z-index:-1}
+.gr-btn:hover{color:var(--paper)}
+.gr-btn:hover::before{transform:translateY(0)}
+.gr-btn:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+
+/* --- Controles --- */
+.gr-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:24px}
+.gr-arrow{width:38px;height:38px;border-radius:50%;border:1px solid rgba(176,141,87,.5);background:transparent;color:var(--gold-deep);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s,color .3s,transform .3s;padding:0}
+.gr-arrow:hover{background:var(--gold-deep);color:var(--paper);transform:scale(1.08)}
+.gr-arrow:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+.gr-arrow svg{width:15px;height:15px}
+.gr-dots{display:flex;gap:10px}
+.gr-dot{width:8px;height:8px;border-radius:50%;border:1px solid rgba(176,141,87,.62);background:transparent;padding:0;cursor:pointer;transition:background .3s,transform .3s}
+.gr-dot.is-active{background:var(--gold);transform:scale(1.35)}
+.gr-dot:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+.gr-hint{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-top:14px;padding-left:.2em;text-align:center}
+@media(max-width:520px){
+  .giftbox{width:158px}
+  .gr-title{font-size:23px}
+  .gr-nav{gap:14px}
+  .gr-acc-c{font-size:14px}
+  .gr-slide{padding-left:18px;padding-right:18px}
+}
+
+/* ============ COMPATIBILIDAD iOS — modal de la mesa de regalos ============ */
+/* El backdrop se monta en <body>, asi que ningun ancestro con contain/transform
+   puede romper su position:fixed ni recortarlo. */
+.gift-backdrop{
+  position:fixed;top:0;right:0;bottom:0;left:0;
+  height:100vh;height:100dvh;
+  -webkit-transform:translateZ(0);transform:translateZ(0); /* capa propia: evita repintados sucios en Safari */
+}
+body.gift-locked{overflow:hidden;-webkit-overflow-scrolling:auto;overscroll-behavior:none}
+/* Safari necesita el prefijo y momentum propio en el carril del carrusel */
+.gr-viewport{
+  -webkit-overflow-scrolling:touch;
+  -webkit-scroll-snap-type:x mandatory;
+  scroll-snap-type:x mandatory;
+}
+.gr-slide{-webkit-scroll-snap-align:center;scroll-snap-align:center}
+/* iOS colapsa los flex-item con flex-basis:100% dentro de un scroller: fijamos el ancho */
+.gr-track{min-width:100%}
+.gr-slide{width:100%;min-width:100%;flex:0 0 100%}
+/* Los botones deben responder al primer toque en Safari */
+.gift-close,.gr-arrow,.gr-dot,.gr-btn,.gr-acc-btn,.giftbox{
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+/* Safari no hereda bien el redondeo en botones */
+.gift-close,.gr-arrow,.gr-acc-btn,.gr-dot{-webkit-appearance:none;appearance:none}
+/* La caja de regalo debe verse aunque GSAP no llegue a animarla */
+.giftbox-stage > div{opacity:1}
+.gift-reveal{background:#FBF8F2}
+.gr-desc,.gr-acc-n{font-size:16px}
+.gr-acc-n{font-size:12px}
+.gr-acc-c{font-size:16px}
+.gr-copied{min-height:22px;margin-top:10px;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.gr-hint{font-size:12px}
+.giftbox-stage{margin-top:26px;min-height:240px}
+.giftbox-cta{font-size:13px}
+/* ── LLUVIA DE SOBRES ── */
+.env-rain{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.env-rain-item{position:absolute;top:-46px;will-change:transform;opacity:0}
+#regalos .env-stage{position:relative;z-index:1}
+.env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0;margin:26px auto 0;opacity:0}
+.env-body{perspective:700px;position:relative;width:min(258px,74vw);aspect-ratio:260/200;filter:drop-shadow(0 10px 26px rgba(21,43,102,.22))}
+.env-body svg.env-svg{width:100%;height:100%;display:block}
+.env-flap-wrap{position:absolute;top:23%;left:6.9%;width:86.2%;height:43%;transform-origin:top center;transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .65s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:2}
+.env-interactive.open .env-flap-wrap{transform:rotateX(-175deg)}
+.env-seal{position:absolute;top:52%;left:50%;width:23%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:3;transition:opacity .35s ease,transform .5s cubic-bezier(.4,0,.2,1);pointer-events:none}
+.env-interactive.open .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.7)}
+.env-open-content{overflow:hidden;max-height:0;opacity:0;transition:max-height .55s .3s ease,opacity .4s .38s ease;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 16px;text-align:center;pointer-events:none}
+.env-interactive.open .env-open-content{max-height:300px;opacity:1;pointer-events:auto;margin-top:20px}
+.env-mailbox-icon{width:42px;height:42px;color:var(--gold);margin-top:6px}
+.env-title{font-family:'Pinyon Script',cursive;font-size:clamp(28px,8vw,34px);line-height:1.4;padding:.08em 0;background:linear-gradient(135deg,#7a5e33 0%,#B08D57 30%,#e1d4bf 50%,#B08D57 70%,#7a5e33 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#7a5e33;animation:goldFlow 7s ease-in-out infinite}
+.env-desc{font-family:var(--serif);font-size:17px;font-weight:500;font-style:italic;color:var(--ink);opacity:.86;line-height:1.75;max-width:300px}
+.env-tap-hint{font-family:var(--sans);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:18px;opacity:0;transition:opacity .5s ease;position:relative;z-index:1}
+.env-tap-hint.show{opacity:.85;animation:envHintPulse 2.4s ease-in-out infinite}
+.env-interactive.open~.env-tap-hint{opacity:0!important;animation:none;pointer-events:none}
+@keyframes envHintPulse{0%,100%{opacity:.5}50%{opacity:.95}}
+.env-body.landed{animation:envBreathe 3.6s ease-in-out infinite}
+@keyframes envBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+@media(prefers-reduced-motion:reduce){.env-body.landed,.env-tap-hint.show{animation:none!important}}
+
+#regalos{position:relative;overflow:hidden}
+.gift-sub-h{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(28px,6vw,38px);color:var(--accent-deep);margin:44px 0 0}
+.env-tap-hint{font-size:13px;font-weight:600}
+.env-desc{opacity:1;font-size:18px}
+.gift-or{display:flex;align-items:center;gap:16px;max-width:420px;margin:48px auto 0}
+.gift-or::before,.gift-or::after{content:"";flex:1;height:1px;background:var(--hair-gold)}
+.gift-or span{font-family:var(--serif);font-style:italic;font-weight:500;font-size:20px;color:var(--gold-deep)}
+
+/* ============ FONDOS DE OLAS (ink/) ============ */
+.bg-olas-azul,.bg-olas-arena{background-color:#faf7ee!important;background-repeat:no-repeat,no-repeat!important;
+  background-position:top center,bottom center!important;background-size:100% clamp(170px,46vw,330px),100% clamp(170px,46vw,330px)!important}
+.bg-olas-azul{background-image:url(ink/olas-azul-top.webp),url(ink/olas-azul-bot.webp)!important}
+.bg-olas-arena{background-image:url(ink/olas-arena-top.webp),url(ink/olas-arena-bot.webp)!important}
+.bg-olas-azul,.bg-olas-arena{padding-top:max(min(18vh,170px),clamp(150px,40vw,290px))!important;padding-bottom:max(min(18vh,170px),clamp(150px,40vw,290px))!important}
+.countdown{background:#fff url(ink/banda.webp) center/cover no-repeat!important}
+.countdown .cd-block{background:rgba(255,255,255,.88)}
+.date-hero{background:#152b66!important}
+.date-hero::after{background:linear-gradient(to bottom,rgba(10,26,69,.35),rgba(10,26,69,.2),rgba(10,26,69,.35)),url(ink/noche.webp) 50% 50%/cover no-repeat!important}
+footer{background:#0a1a45 url(ink/noche.webp) center/cover no-repeat!important}
+footer::before{content:"";position:absolute;inset:0;background:rgba(10,26,69,.45);pointer-events:none}
+footer .footer-inner{position:relative;z-index:1}
+
+/* ============ LETRA ELEGANTE: Cormorant en lugar de la sans (pedido 6 nov) ============ */
+body{font-variant-numeric:lining-nums;font-size:18px}
+.hero-eyebrow{font-family:var(--italiana)!important;font-size:15px!important;letter-spacing:.42em!important;font-weight:400!important;color:#f3ecdc!important}
+.eyebrow{font-size:14px!important;font-weight:700!important;letter-spacing:.42em!important}
+.hero-place{font-size:17px!important;font-weight:600!important}
+.loc-type,.padrino-rol,.hs-type,.swatch-group-title,.hosp-city,.gift-bank-l,.gr-acc-n,.gr-bankname,.dress-lead{font-size:14px!important;font-weight:700!important}
+.loc-btn,.hs-btn,.hs-tab,.nv-link,.nv-menu span,.gift-copy,.gr-btn,.dc-look-cta,.dcv-cap,.rsvp-btn-jen,.album-btn,.giftbox-cta,.env-tap-hint{font-size:14px!important;font-weight:700!important}
+.swatch-n,.avoid-item,.cd-lbl,.date-lbl,.nm-n,.nm-foot,.footer-credit,.credit-label,.rsvp-deadline-badge,.gr-hint,.gr-copied,.hs-maphint{font-size:14px!important;font-weight:700!important}
+.hs-dist,.hs-chip small,.hosp-dist{font-size:17px!important}
+.hs-venue-tag{font-size:12px!important}
+.hs-pin,.hs-dot{font-size:16px!important;font-weight:700!important}
+@media (max-width:520px){.countdown-grid{flex-wrap:nowrap!important;gap:8px!important}.cd-block{min-width:0!important;flex:1 1 0;padding:18px 4px!important}.cd-num{font-size:38px!important}.cd-lbl{font-size:12px!important;letter-spacing:.04em!important;padding-left:0!important}}
+.gr-hint{letter-spacing:.12em!important}
+.gift-bank .clabe,.gr-acc-c{font-size:18px!important}
 </style>
 </head>
 <body>
@@ -1960,7 +2214,7 @@ body:not(.nv-on) .nv-bar{pointer-events:none}
 <nav class="nv" id="nv" aria-label="Secciones">
   <div class="nv-bar">
     <button type="button" class="nv-home" data-go="inicio" aria-label="Ir al inicio"><span class="nv-mono" aria-hidden="true">T<i>&amp;</i>A</span></button>
-    <ul class="nv-links"><li><button type="button" class="nv-link" data-go="invitacion"><span class="nv-pill" aria-hidden="true"></span>Invitación</button></li><li><button type="button" class="nv-link" data-go="ubicacion"><span class="nv-pill" aria-hidden="true"></span>Ubicación</button></li><li><button type="button" class="nv-link" data-go="itinerario"><span class="nv-pill" aria-hidden="true"></span>Itinerario</button></li><li><button type="button" class="nv-link" data-go="vestimenta"><span class="nv-pill" aria-hidden="true"></span>Vestimenta</button></li><li><button type="button" class="nv-link" data-go="hospedaje"><span class="nv-pill" aria-hidden="true"></span>Hospedaje</button></li><li><button type="button" class="nv-link" data-go="galeria"><span class="nv-pill" aria-hidden="true"></span>Galería</button></li><li><button type="button" class="nv-link" data-go="regalos"><span class="nv-pill" aria-hidden="true"></span>Regalos</button></li><li><button type="button" class="nv-link" data-go="confirmar"><span class="nv-pill" aria-hidden="true"></span>Confirmar</button></li></ul>
+    <ul class="nv-links"><li><button type="button" class="nv-link" data-go="invitacion"><span class="nv-pill" aria-hidden="true"></span>Invitación</button></li><li><button type="button" class="nv-link" data-go="ubicacion"><span class="nv-pill" aria-hidden="true"></span>Ubicación</button></li><li><button type="button" class="nv-link" data-go="itinerario"><span class="nv-pill" aria-hidden="true"></span>Itinerario</button></li><li><button type="button" class="nv-link" data-go="vestimenta"><span class="nv-pill" aria-hidden="true"></span>Vestimenta</button></li><li><button type="button" class="nv-link" data-go="hospedaje"><span class="nv-pill" aria-hidden="true"></span>Hospedaje</button></li><li><button type="button" class="nv-link" data-go="regalos"><span class="nv-pill" aria-hidden="true"></span>Regalos</button></li><li><button type="button" class="nv-link" data-go="confirmar"><span class="nv-pill" aria-hidden="true"></span>Confirmar</button></li></ul>
     <span class="nv-sep" aria-hidden="true"></span>
     <button type="button" class="nv-icon" id="nvShare" aria-label="Compartir invitación"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg></button>
     <button type="button" class="nv-menu" id="nvOpen" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menú</span></button>
@@ -1968,7 +2222,7 @@ body:not(.nv-on) .nv-bar{pointer-events:none}
 </nav>
 <div class="nm" id="nm" role="dialog" aria-modal="true" aria-label="Menú" hidden>
   <div class="nm-head"><span class="nv-mono nm-mono" aria-hidden="true">T<i>&amp;</i>A</span><button type="button" class="nm-close" id="nmClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
-  <ul class="nm-list"><li><button type="button" class="nm-link" data-go="inicio"><span class="nm-n">01</span><span class="nm-t">Inicio</span></button></li><li><button type="button" class="nm-link" data-go="invitacion"><span class="nm-n">02</span><span class="nm-t">Invitación</span></button></li><li><button type="button" class="nm-link" data-go="ubicacion"><span class="nm-n">03</span><span class="nm-t">Ubicación</span></button></li><li><button type="button" class="nm-link" data-go="itinerario"><span class="nm-n">04</span><span class="nm-t">Itinerario</span></button></li><li><button type="button" class="nm-link" data-go="vestimenta"><span class="nm-n">05</span><span class="nm-t">Vestimenta</span></button></li><li><button type="button" class="nm-link" data-go="padrinos"><span class="nm-n">06</span><span class="nm-t">Padrinos</span></button></li><li><button type="button" class="nm-link" data-go="hospedaje"><span class="nm-n">07</span><span class="nm-t">Hospedaje</span></button></li><li><button type="button" class="nm-link" data-go="galeria"><span class="nm-n">08</span><span class="nm-t">Galería</span></button></li><li><button type="button" class="nm-link" data-go="regalos"><span class="nm-n">09</span><span class="nm-t">Regalos</span></button></li><li><button type="button" class="nm-link" data-go="confirmar"><span class="nm-n">10</span><span class="nm-t">Confirmar</span></button></li></ul>
+  <ul class="nm-list"><li><button type="button" class="nm-link" data-go="inicio"><span class="nm-n">01</span><span class="nm-t">Inicio</span></button></li><li><button type="button" class="nm-link" data-go="invitacion"><span class="nm-n">02</span><span class="nm-t">Invitación</span></button></li><li><button type="button" class="nm-link" data-go="ubicacion"><span class="nm-n">03</span><span class="nm-t">Ubicación</span></button></li><li><button type="button" class="nm-link" data-go="itinerario"><span class="nm-n">04</span><span class="nm-t">Itinerario</span></button></li><li><button type="button" class="nm-link" data-go="vestimenta"><span class="nm-n">05</span><span class="nm-t">Vestimenta</span></button></li><li><button type="button" class="nm-link" data-go="padrinos"><span class="nm-n">06</span><span class="nm-t">Padrinos</span></button></li><li><button type="button" class="nm-link" data-go="hospedaje"><span class="nm-n">07</span><span class="nm-t">Hospedaje</span></button></li><li><button type="button" class="nm-link" data-go="regalos"><span class="nm-n">08</span><span class="nm-t">Regalos</span></button></li><li><button type="button" class="nm-link" data-go="confirmar"><span class="nm-n">09</span><span class="nm-t">Confirmar</span></button></li></ul>
   <p class="nm-foot">Sábado 6 de febrero de 2027 · Acapulco</p>
 </div>
 
@@ -2017,7 +2271,7 @@ body:not(.nv-on) .nv-bar{pointer-events:none}
   <div class="seam" style="--from:transparent;--to:var(--surface)" aria-hidden="true"></div>
 
   <!-- VERSO -->
-  <section class="section-surface" id="invitacion">
+  <section class="section-surface bg-olas-arena" id="invitacion">
     <div class="container">
       <div class="verse-wrap">
         <svg class="verse-ornament" viewBox="0 0 360 80" fill="none" aria-hidden="true">
@@ -2082,7 +2336,7 @@ body:not(.nv-on) .nv-bar{pointer-events:none}
   <div class="seam" style="--from:var(--surface);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- UBICACIONES -->
-  <section class="section-paper locs" id="ubicacion">
+  <section class="section-paper locs bg-olas-azul" id="ubicacion">
     <div class="container">
       <div style="text-align:center">
         <div class="eyebrow">Acompáñanos</div>
@@ -2252,7 +2506,7 @@ body:not(.nv-on) .nv-bar{pointer-events:none}
   <div class="seam" style="--from:var(--bg);--to:var(--surface)" aria-hidden="true"></div>
 
   <!-- PADRINOS -->
-  <section class="section-surface padrinos" id="padrinos">
+  <section class="section-surface padrinos bg-olas-arena" id="padrinos">
     <div class="container">
       <div class="eyebrow">Acompañados por</div>
       <h2>Nuestros <em>Padrinos</em></h2>
@@ -2347,12 +2601,12 @@ body:not(.nv-on) .nv-bar{pointer-events:none}
   <div class="seam" style="--from:var(--paper);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- HOSPEDAJE — lista / mapa (MapLibre + OpenFreeMap, referencia valeyandres.love) -->
-  <section class="section-paper hs" id="hospedaje">
+  <section class="section-paper hs bg-olas-azul" id="hospedaje">
     <div class="container">
       <div style="text-align:center">
         <div class="eyebrow">Si vienes de fuera</div>
         <h2>Hospedaje <em>sugerido</em></h2>
-        <p class="hs-intro">Opciones en Acapulco Diamante, de camino a la recepción en Barra Vieja. Tiempos aproximados en auto, sin tráfico.</p>
+        <p class="hs-intro">Te recomendamos estas opciones en Acapulco Diamante, de camino a la recepción en Barra Vieja.</p>
       </div>
       <div class="hs-tabs-wrap">
         <div class="hs-tabs" role="tablist" aria-label="Vista de hospedaje">
@@ -2363,58 +2617,51 @@ body:not(.nv-on) .nv-bar{pointer-events:none}
       </div>
       <div class="hs-stage">
         <div class="hs-flip" id="hsFlip">
-          <ul class="hs-list" id="hsList">
-        <li class="hs-card">
-          <span class="hs-num">01</span>
-          <p class="hs-type">Hotel · Resort</p>
-          <h3 class="hs-name">Palacio Mundo Imperial</h3>
-          <p class="hs-addr">Blvd. Barra Vieja 3, Acapulco Diamante</p>
-          <div class="hs-dist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg><span><strong>19 min</strong> a la recepción <span>· 19,9 km</span><br><strong>34 min</strong> a la ceremonia <span>· 33,7 km</span></span></div>
-          <div class="hs-actions">
-            <a class="hs-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Palacio%20Mundo%20Imperial%2C%20Acapulco%2C%20Guerrero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> Ver en Maps</a>
-            <a class="hs-btn" href="https://www.palaciomundoimperial.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Sitio web</a>
+          <div class="hosp-carousel" id="hsList">
+            <button class="hosp-arrow prev" type="button" aria-label="Anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="hosp-arrow next" type="button" aria-label="Siguiente"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="hosp-viewport">
+              <div class="hosp-track" id="hospTrack">
+              <div class="hosp-slide">
+                <div class="hosp-photo"><img src="hoteles/palacio.jpg" alt="Palacio Mundo Imperial" decoding="async"></div>
+                <div class="hosp-name">Palacio Mundo Imperial</div>
+                <div class="hosp-city">Acapulco Diamante</div>
+                <div class="hosp-dist"><strong>19 min</strong> en auto a la recepción · 19,9 km</div>
+                <div class="hosp-btns">
+                  <a class="btn-hosp" href="https://www.palaciomundoimperial.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 7V5a5 5 0 0110 0v2"/></svg> Reservar</a>
+                  <a class="btn-hosp" href="https://www.google.com/maps/search/?api=1&amp;query=Palacio%20Mundo%20Imperial%2C%20Acapulco%2C%20Guerrero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Cómo llegar</a>
+                </div>
+              </div>
+              <div class="hosp-slide">
+                <div class="hosp-photo"><img src="hoteles/princess.jpg" alt="Princess Mundo Imperial" decoding="async"></div>
+                <div class="hosp-name">Princess Mundo Imperial</div>
+                <div class="hosp-city">Playa Revolcadero, Acapulco</div>
+                <div class="hosp-dist"><strong>25 min</strong> en auto a la recepción · 25,6 km</div>
+                <div class="hosp-btns">
+                  <a class="btn-hosp" href="https://www.princessmundoimperial.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 7V5a5 5 0 0110 0v2"/></svg> Reservar</a>
+                  <a class="btn-hosp" href="https://www.google.com/maps/search/?api=1&amp;query=Princess%20Mundo%20Imperial%2C%20Acapulco%2C%20Guerrero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Cómo llegar</a>
+                </div>
+              </div>
+              <div class="hosp-slide">
+                <div class="hosp-photo"><img src="hoteles/pierre.jpg" alt="Pierre Mundo Imperial" decoding="async"></div>
+                <div class="hosp-name">Pierre Mundo Imperial</div>
+                <div class="hosp-city">Playa Revolcadero, Acapulco</div>
+                <div class="hosp-dist"><strong>26 min</strong> en auto a la recepción · 26,4 km</div>
+                <div class="hosp-btns">
+                  <a class="btn-hosp" href="https://www.pierremundoimperial.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 7V5a5 5 0 0110 0v2"/></svg> Reservar</a>
+                  <a class="btn-hosp" href="https://www.google.com/maps/search/?api=1&amp;query=Pierre%20Mundo%20Imperial%2C%20Acapulco%2C%20Guerrero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Cómo llegar</a>
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="hosp-dots" id="hospDots"><button class="active" aria-label="Hotel 1"></button><button aria-label="Hotel 2"></button><button aria-label="Hotel 3"></button></div>
           </div>
-        </li>
-        <li class="hs-card">
-          <span class="hs-num">02</span>
-          <p class="hs-type">Resort</p>
-          <h3 class="hs-name">The Grand Mayan Acapulco</h3>
-          <p class="hs-addr">Av. Costera de las Palmas 1121, Acapulco Diamante</p>
-          <div class="hs-dist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg><span><strong>23 min</strong> a la recepción <span>· 23,3 km</span><br><strong>33 min</strong> a la ceremonia <span>· 31,5 km</span></span></div>
-          <div class="hs-actions">
-            <a class="hs-btn" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Grand%20Mayan%20Acapulco%2C%20Acapulco%2C%20Guerrero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> Ver en Maps</a>
-            <a class="hs-btn" href="https://www.vidanta.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Sitio web</a>
-          </div>
-        </li>
-        <li class="hs-card">
-          <span class="hs-num">03</span>
-          <p class="hs-type">Hotel · Resort</p>
-          <h3 class="hs-name">Princess Mundo Imperial</h3>
-          <p class="hs-addr">Av. Costera de las Palmas, Playa Revolcadero</p>
-          <div class="hs-dist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg><span><strong>25 min</strong> a la recepción <span>· 25,6 km</span><br><strong>31 min</strong> a la ceremonia <span>· 29,4 km</span></span></div>
-          <div class="hs-actions">
-            <a class="hs-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Princess%20Mundo%20Imperial%2C%20Acapulco%2C%20Guerrero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> Ver en Maps</a>
-            <a class="hs-btn" href="https://www.princessmundoimperial.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Sitio web</a>
-          </div>
-        </li>
-        <li class="hs-card">
-          <span class="hs-num">04</span>
-          <p class="hs-type">Hotel</p>
-          <h3 class="hs-name">Pierre Mundo Imperial</h3>
-          <p class="hs-addr">Av. Costera de las Palmas, Playa Revolcadero</p>
-          <div class="hs-dist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg><span><strong>26 min</strong> a la recepción <span>· 26,4 km</span><br><strong>30 min</strong> a la ceremonia <span>· 28,5 km</span></span></div>
-          <div class="hs-actions">
-            <a class="hs-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Pierre%20Mundo%20Imperial%2C%20Acapulco%2C%20Guerrero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> Ver en Maps</a>
-            <a class="hs-btn" href="https://www.pierremundoimperial.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Sitio web</a>
-          </div>
-        </li>
-          </ul>
           <div class="hs-mapview" id="hsMapView" hidden>
             <div class="hs-mapcard">
               <div class="hs-map" id="hsMap" role="region" aria-label="Mapa de hospedaje, ceremonia y recepción"></div>
               <div class="hs-maphint">Toca un número para ver el hotel</div>
             </div>
-            <div class="hs-chips" id="hsChips"><button type="button" class="hs-chip" data-hs="0"><span class="hs-dot">1</span><span><b>Palacio Mundo Imperial</b><small>19 min a la recepción</small></span></button><button type="button" class="hs-chip" data-hs="1"><span class="hs-dot">2</span><span><b>The Grand Mayan Acapulco</b><small>23 min a la recepción</small></span></button><button type="button" class="hs-chip" data-hs="2"><span class="hs-dot">3</span><span><b>Princess Mundo Imperial</b><small>25 min a la recepción</small></span></button><button type="button" class="hs-chip" data-hs="3"><span class="hs-dot">4</span><span><b>Pierre Mundo Imperial</b><small>26 min a la recepción</small></span></button></div>
+            <div class="hs-chips" id="hsChips"><button type="button" class="hs-chip" data-hs="0"><span class="hs-dot">1</span><span><b>Palacio Mundo Imperial</b><small>19 min a la recepción</small></span></button><button type="button" class="hs-chip" data-hs="1"><span class="hs-dot">2</span><span><b>Princess Mundo Imperial</b><small>25 min a la recepción</small></span></button><button type="button" class="hs-chip" data-hs="2"><span class="hs-dot">3</span><span><b>Pierre Mundo Imperial</b><small>26 min a la recepción</small></span></button></div>
           </div>
         </div>
       </div>
@@ -2423,51 +2670,12 @@ body:not(.nv-on) .nv-bar{pointer-events:none}
   </section>
 
   <!-- DIVIDER: paper → surface -->
-  <div class="seam" style="--from:var(--paper);--to:var(--surface)" aria-hidden="true"></div>
-
-  <!-- GALLERY — RUEDA DE LA FORTUNA -->
-  <section class="section-surface gallery" id="galeria">
-    <div class="container gallery-head">
-      <div class="eyebrow">Momentos</div>
-      <h2>Del camino <em>que</em> nos trajo aquí</h2>
-      <div class="gallery-sub">rueda de recuerdos</div>
-    </div>
-    <div class="wheel-stage">
-      <div class="wheel" id="wheel">
-        <span class="wheel-spoke" aria-hidden="true"></span>
-        <span class="wheel-spoke wheel-spoke--inner" aria-hidden="true"></span>
-        <div class="wheel-item" style="--i:0"><div class="wheel-item-inner"><img src="foto-7-t.jpg" data-full="foto-7.jpg" alt="Los novios en el templo" decoding="async"></div></div>
-        <div class="wheel-item" style="--i:1"><div class="wheel-item-inner"><img src="foto-1-t.jpg" data-full="foto-1.jpg" alt="Brindis en el picnic" decoding="async"></div></div>
-        <div class="wheel-item" style="--i:2"><div class="wheel-item-inner"><img src="foto-8-t.jpg" data-full="foto-8.jpg" alt="Save the date" decoding="async"></div></div>
-        <div class="wheel-item" style="--i:3"><div class="wheel-item-inner"><img src="foto-2-t.jpg" data-full="foto-2.jpg" alt="En las escalinatas" decoding="async"></div></div>
-        <div class="wheel-item" style="--i:4"><div class="wheel-item-inner"><img src="foto-9-t.jpg" data-full="foto-9.jpg" alt="En la fuente" decoding="async"></div></div>
-        <div class="wheel-item" style="--i:5"><div class="wheel-item-inner"><img src="foto-3-t.jpg" data-full="foto-3.jpg" alt="Saliendo del civil" decoding="async"></div></div>
-        <div class="wheel-item wheel-item--xtra" style="--i:6"><div class="wheel-item-inner"><img src="foto-10-t.jpg" data-full="foto-10.jpg" alt="El anillo" decoding="async"></div></div>
-        <div class="wheel-item wheel-item--xtra" style="--i:7"><div class="wheel-item-inner"><img src="foto-4-t.jpg" data-full="foto-4.jpg" alt="Leyendo el save the date" decoding="async"></div></div>
-        <div class="wheel-item wheel-item--xtra" style="--i:8"><div class="wheel-item-inner"><img src="foto-5-t.jpg" data-full="foto-5.jpg" alt="Paseo por el centro" decoding="async"></div></div>
-        <div class="wheel-item wheel-item--xtra" style="--i:9"><div class="wheel-item-inner"><img src="foto-6-t.jpg" data-full="foto-6.jpg" alt="Frente al templo" decoding="async"></div></div>
-      </div>
-      <div id="wheel-spark-layer" aria-hidden="true"></div>
-      <div class="wheel-hub" aria-hidden="true">
-        <svg viewBox="0 0 60 60" fill="none">
-          <g stroke="currentColor" stroke-width=".8" fill="none">
-            <circle cx="30" cy="30" r="18" opacity=".4"/>
-            <circle cx="30" cy="30" r="10"/>
-            <circle cx="30" cy="30" r="3" fill="currentColor"/>
-            <path d="M30 14 L30 20 M30 40 L30 46 M14 30 L20 30 M40 30 L46 30" opacity=".55"/>
-            <path d="M18 18 L22 22 M38 38 L42 42 M42 18 L38 22 M22 38 L18 42" opacity=".4"/>
-          </g>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIVIDER: surface → surface -->
   <div class="seam" style="--from:var(--surface);--to:var(--surface)" aria-hidden="true"></div>
 
-  <!-- GIFTS — LLUVIA DE SOBRES -->
-  <section class="section-surface gifts-jen" id="regalos">
-    <div class="container">
+  <!-- REGALOS: lluvia de sobres (boda-jeffersson-y-vanessa) + caja de regalo (boda-paola-e-ivan) -->
+  <section class="section-surface gifts-jen gifts bg-olas-arena" id="regalos">
+    <div class="env-rain" id="envRain" aria-hidden="true"></div>
+    <div class="container env-stage">
       <div class="eyebrow">Con cariño</div>
       <h2>Mesa <em>de</em> Regalos</h2>
       <div class="gift-card-jen">
@@ -2475,34 +2683,127 @@ body:not(.nv-on) .nv-bar{pointer-events:none}
           Contar con ustedes es suficiente, pero si desean tener un detalle, agradecemos una contribución para nuestra nueva etapa.
         </p>
       </div>
-      <div class="gift-opts-head"><span>Tendremos tres opciones:</span></div>
-      <div class="gift-opts">
-        <article class="gift-opt">
-          <div class="gift-opt-num">Opción 1</div>
-          <h3 class="gift-opt-title">Lluvia de sobres</h3>
-          <img class="gift-opt-img" src="sobres-regalo.png" alt="Sobres" decoding="async">
-          <p class="gift-opt-text">Si prefieres hacernos un obsequio en efectivo, podrás depositar tu sobre en el buzón el día del evento.</p>
-          <div class="gift-opt-orn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></div>
-        </article>
-        <a class="gift-opt gift-opt--link" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60056889" target="_blank" rel="noopener">
-          <div class="gift-opt-num">Opción 2</div>
-          <h3 class="gift-opt-title">Mesa de regalos</h3>
-          <img class="gift-opt-logo" src="liverpool.png" alt="Liverpool" decoding="async">
-          <div class="gift-opt-code">No. de evento<strong>60056889</strong></div>
-          <span class="gift-opt-cta">Ver mesa de regalos</span>
-        </a>
-        <article class="gift-opt gift-opt--bank">
-          <div class="gift-opt-num">Opción 3</div>
-          <h3 class="gift-opt-title">Transferencia</h3>
-          <div class="gift-bank">
-            <span class="gift-bank-l">Banco</span><strong>Santander</strong>
-            <span class="gift-bank-l">CLABE</span><strong class="clabe">014650260257670702</strong>
-            <span class="gift-bank-l">Titular</span><strong>Óscar Ali Morales Martínez</strong>
+
+      <h3 class="gift-sub-h">Lluvia de sobres</h3>
+      <button class="env-interactive" id="envGift" type="button" aria-label="Sobre — toca para abrir" aria-expanded="false">
+        <div class="env-body" id="envGiftBody">
+          <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="envPaper" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#fbf8f1"/><stop offset="100%" stop-color="#f4efe4"/>
+              </linearGradient>
+            </defs>
+            <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#envPaper)" stroke="rgba(30,58,137,.45)" stroke-width="1.4"/>
+            <path d="M18 184 L130 110 L242 184" stroke="rgba(30,58,137,.28)" stroke-width="1" fill="none"/>
+          </svg>
+          <div class="env-flap-wrap" aria-hidden="true">
+            <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
+              <defs>
+                <linearGradient id="envFlap" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#f4efe4"/><stop offset="100%" stop-color="#fdfbf6"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 0 L112 86 L224 0 Z" fill="url(#envFlap)" stroke="rgba(30,58,137,.45)" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
           </div>
-          <button class="copy-clabe gift-copy" type="button" data-clabe="014650260257670702">Copiar CLABE</button>
-        </article>
+          <svg class="env-seal" viewBox="0 0 60 60" aria-hidden="true">
+            <circle cx="30" cy="30" r="28" fill="#1e3a89"/>
+            <circle cx="30" cy="30" r="28" fill="none" stroke="#0f1f4d" stroke-width="2" opacity=".55"/>
+            <circle cx="30" cy="30" r="21.5" fill="none" stroke="#e1d4bf" stroke-width="1.1" opacity=".9"/>
+            <text x="30" y="37" text-anchor="middle" font-family="'Pinyon Script', cursive" font-size="24" fill="#e1d4bf">T&amp;A</text>
+          </svg>
+        </div>
+        <div class="env-open-content" aria-live="polite">
+          <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="8" y="22" width="36" height="24" rx="5"/>
+            <path d="M8 30 Q26 38 44 30"/>
+            <rect x="18" y="8" width="16" height="16" rx="2"/>
+            <path d="M18 8 Q26 3 34 8"/>
+            <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
+          </svg>
+          <p class="env-title">Tu presencia es nuestro regalo</p>
+          <p class="env-desc">Si prefieres hacernos un obsequio en efectivo, el día del evento habrá un buzón donde podrás depositar tu sobre.</p>
+        </div>
+      </button>
+      <p class="env-tap-hint" id="envGiftHint">Toca para abrir</p>
+
+      <div class="gift-or"><span>también</span></div>
+
+      <div class="giftbox-stage">
+        <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+        <div>
+          <button class="giftbox" id="giftbox" type="button" aria-label="Abrir la mesa de regalos" aria-expanded="false" aria-controls="gift-reveal">
+            <svg viewBox="0 0 200 190" fill="none" aria-hidden="true">
+              <rect x="26" y="72" width="148" height="104" rx="4" fill="#1e3a89"/>
+              <rect x="26" y="72" width="148" height="104" rx="4" fill="url(#gbShade)"/>
+              <rect x="88" y="72" width="24" height="104" fill="#c9a46a"/>
+              <rect x="26" y="112" width="148" height="15" fill="#c9a46a"/>
+              <rect x="26.7" y="72.7" width="146.6" height="102.6" rx="3.3" stroke="#7a5e33" stroke-width="1.4"/>
+              <g class="giftbox-lid">
+                <rect x="16" y="54" width="168" height="26" rx="4" fill="#2a4c9c"/>
+                <rect x="16.7" y="54.7" width="166.6" height="24.6" rx="3.3" stroke="#7a5e33" stroke-width="1.4"/>
+                <rect x="88" y="54" width="24" height="26" fill="#c9a46a"/>
+                <path d="M100 54 C100 40 84 26 70 32 C58 37 62 52 78 54 Z" fill="#c9a46a" stroke="#7a5e33" stroke-width="1.2"/>
+                <path d="M100 54 C100 40 116 26 130 32 C142 37 138 52 122 54 Z" fill="#c9a46a" stroke="#7a5e33" stroke-width="1.2"/>
+                <circle cx="100" cy="52" r="8" fill="#e1d4bf" stroke="#7a5e33" stroke-width="1.2"/>
+              </g>
+              <defs>
+                <linearGradient id="gbShade" x1="26" y1="72" x2="174" y2="176" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#ffffff" stop-opacity=".14"/><stop offset="1" stop-color="#000000" stop-opacity=".2"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </button>
+          <span class="giftbox-cta" id="giftbox-cta">Toca el regalo</span>
+        </div>
       </div>
-      <div class="gift-opts-foot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></div>
+
+      <div class="gift-backdrop" id="gift-backdrop" role="dialog" aria-modal="true" aria-label="Mesa de regalos">
+        <div class="gift-reveal" id="gift-reveal">
+          <button class="gift-close" id="gift-close" type="button" aria-label="Cerrar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+          <div class="gift-reveal-eyebrow">Elige una opción</div>
+          <div class="gr-viewport" id="gr-viewport">
+            <div class="gr-track" id="gr-track">
+
+              <div class="gr-slide">
+                <div class="gr-logo"><img src="liverpool-logo.png" alt="Liverpool" width="508" height="121" decoding="async"></div>
+                <div class="gr-title">Mesa de regalos</div>
+                <div class="gr-desc">Número de evento <b>60056889</b><br>Envío directo a los novios</div>
+                <a class="gr-btn" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60056889" target="_blank" rel="noopener">Ver mesa</a>
+              </div>
+
+              <div class="gr-slide">
+                <div class="gr-logo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+                    <rect x="3" y="6" width="18" height="13" rx="1.5"/><path d="M3 10h18"/><path d="M7 15h4"/>
+                  </svg>
+                </div>
+                <div class="gr-title">Transferencia</div>
+                <div class="gr-bankname">Santander</div>
+                <div class="gr-accounts">
+                  <div class="gr-acc">
+                    <div class="gr-acc-info">
+                      <div class="gr-acc-n">Óscar Ali Morales Martínez</div>
+                      <div class="gr-acc-c">014 650 260257670702</div>
+                    </div>
+                    <button class="gr-acc-btn gr-copy" data-clabe="014650260257670702" type="button" aria-label="Copiar CLABE"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+                  </div>
+                </div>
+                <p class="gr-copied" id="gr-copied" aria-live="polite"></p>
+              </div>
+
+            </div>
+          </div>
+          <div class="gr-nav">
+            <button class="gr-arrow" id="gr-prev" type="button" aria-label="Opción anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+            <div class="gr-dots" id="gr-dots"></div>
+            <button class="gr-arrow" id="gr-next" type="button" aria-label="Siguiente opción"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+          <div class="gr-hint">Desliza para cambiar de opción</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2557,7 +2858,7 @@ body:not(.nv-on) .nv-bar{pointer-events:none}
   <div class="seam" style="--from:var(--bg);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- RSVP -->
-  <section class="section-paper rsvp-jen" id="confirmar">
+  <section class="section-paper rsvp-jen bg-olas-azul" id="confirmar">
     <div class="rsvp-card-jen">
       <!-- Esquinas decorativas -->
       <svg class="rsvp-corner rsvp-corner--tl" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--gold)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--gold)" opacity=".5"/></svg>
@@ -3394,10 +3695,7 @@ gsap.fromTo('.album-btn',{opacity:0,y:10},{opacity:1,y:0,duration:.9,scrollTrigg
 
 // ------ RSVP animations ------
 gsap.fromTo('.rsvp-card-jen',{opacity:0,y:40},{opacity:1,y:0,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.rsvp-jen',start:'top 78%'}});
-gsap.fromTo('.gifts-jen .eyebrow, .gifts-jen h2, .gift-card-jen, .gift-opts-head, .gift-opt, .gift-opts-foot',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.12,scrollTrigger:{trigger:'.gifts-jen',start:'top 78%'}});
-document.querySelectorAll('.gift-opt').forEach(function(c,i){
-  ScrollTrigger.create({trigger:c,start:'top 80%',once:true,onEnter:function(){ setTimeout(function(){ c.classList.add('sheen'); }, 500 + i*220); }});
-});
+gsap.fromTo('.gifts-jen .eyebrow, .gift-card-jen, .gift-sub-h, .gift-or',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.12,scrollTrigger:{trigger:'.gifts-jen',start:'top 78%'}});
 
 // ------ FOOTER ------
 gsap.fromTo('.footer-ornament',{opacity:0,scaleX:0},{opacity:.55,scaleX:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'footer',start:'top 90%'}});
@@ -3699,7 +3997,7 @@ if(musicEl && musicEl.readyState >= 2){
 // ------ HOSPEDAJE — lista / mapa (MapLibre GL + OpenFreeMap, sin API key) ------
 (function(){
   var sec=document.getElementById('hospedaje'); if(!sec) return;
-  var HOTELS=[{"name": "Palacio Mundo Imperial", "lat": 16.7685976, "lng": -99.7740771, "min": 19, "km": 19.9}, {"name": "The Grand Mayan Acapulco", "lat": 16.7782312, "lng": -99.7988489, "min": 23, "km": 23.3}, {"name": "Princess Mundo Imperial", "lat": 16.7880815, "lng": -99.8158798, "min": 25, "km": 25.6}, {"name": "Pierre Mundo Imperial", "lat": 16.7918773, "lng": -99.8224683, "min": 26, "km": 26.4}];
+  var HOTELS=[{"name": "Palacio Mundo Imperial", "lat": 16.7685976, "lng": -99.7740771, "min": 19, "km": 19.9}, {"name": "Princess Mundo Imperial", "lat": 16.7880815, "lng": -99.8158798, "min": 25, "km": 25.6}, {"name": "Pierre Mundo Imperial", "lat": 16.7918773, "lng": -99.8224683, "min": 26, "km": 26.4}];
   var VENUES=[
     {tag:'Ceremonia',name:'Capilla María Estrella del Mar',lat:16.9017789,lng:-99.9726653},
     {tag:'Recepción',name:'Levú Suites & Events',lat:16.6899236,lng:-99.630161}
@@ -3807,7 +4105,7 @@ if(musicEl && musicEl.readyState >= 2){
   var prog=document.getElementById('nvProgress'), bar=nv&&nv.querySelector('.nv-bar');
   if(!nv) return;
   var slider=document.createElement('span'); slider.className='nv-slider'; slider.setAttribute('aria-hidden','true'); bar.appendChild(slider);
-  var IDS=['inicio','invitacion','ubicacion','itinerario','vestimenta','padrinos','hospedaje','galeria','regalos','confirmar'];
+  var IDS=['inicio','invitacion','ubicacion','itinerario','vestimenta','padrinos','hospedaje','regalos','confirmar'];
   function go(id){
     var el=document.getElementById(id); if(!el) return;
     var y=el.getBoundingClientRect().top+window.pageYOffset-(window.innerWidth>=1024?84:0);
@@ -3890,6 +4188,387 @@ window.elyConfetti=function(){
     })(p);
   }
 };
+
+
+// ------ HOSPEDAJE: carrusel (boda-roxana-y-omar) ------
+function initSwipeCarousel(trackId, dotsId, arrowSel){
+  var track=document.getElementById(trackId);
+  if(!track)return;
+  var slides=track.children.length;
+  var dots=document.querySelectorAll('#'+dotsId+' button');
+  var idx=0;
+  function go(i){
+    idx=(i+slides)%slides;
+    track.style.transform='translateX('+(-idx*100)+'%)';
+    dots.forEach(function(d,k){d.classList.toggle('active',k===idx);});
+  }
+  var prev=document.querySelector(arrowSel+'.prev');
+  var next=document.querySelector(arrowSel+'.next');
+  if(prev)prev.addEventListener('click',function(){go(idx-1);});
+  if(next)next.addEventListener('click',function(){go(idx+1);});
+  dots.forEach(function(d,k){d.addEventListener('click',function(){go(k);});});
+  var sx=0,sy=0;
+  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+  track.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-sx;
+    var dy=e.changedTouches[0].clientY-sy;
+    if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){go(dx<0?idx+1:idx-1);}
+  },{passive:true});
+  go(0);
+}
+initSwipeCarousel('hospTrack','hospDots','.hosp-arrow');
+gsap.fromTo('#hsList',{opacity:0,y:34,scale:.96},{opacity:1,y:0,scale:1,duration:.9,ease:'power4.out',scrollTrigger:{trigger:'#hospedaje',start:'top 70%',once:true}});
+
+// ------ MESA DE REGALOS: caja + confetti + carrusel ------
+(function(){
+  var box    = document.getElementById('giftbox');
+  var cta    = document.getElementById('giftbox-cta');
+  var reveal = document.getElementById('gift-backdrop');
+  var closeB = document.getElementById('gift-close');
+  var track  = document.getElementById('gr-track');
+  var viewp  = document.getElementById('gr-viewport');
+  var dotsEl = document.getElementById('gr-dots');
+  var canvas = document.getElementById('confetti-canvas');
+  if(!box || !reveal || !track) return;
+
+  var slides = track.querySelectorAll('.gr-slide');
+  var total  = slides.length;
+  var idx    = 0;
+
+  /* ---------- Carrusel de regalos: scroll-snap nativo ---------- */
+  for(var i=0;i<total;i++){
+    (function(n){
+      var d = document.createElement('button');
+      d.type = 'button';
+      d.className = 'gr-dot' + (n===0?' is-active':'');
+      d.setAttribute('aria-label','Opción ' + (n+1) + ' de ' + total);
+      d.addEventListener('click', function(){ goTo(n); });
+      dotsEl.appendChild(d);
+    })(i);
+  }
+  var dots    = dotsEl.querySelectorAll('.gr-dot');
+  var prevBtn = document.getElementById('gr-prev');
+  var nextBtn = document.getElementById('gr-next');
+
+  function layoutSlides(){
+    var h = 0;
+    for(var a=0;a<slides.length;a++){
+      slides[a].style.height = 'auto';
+      h = Math.max(h, slides[a].scrollHeight);
+    }
+    for(var b=0;b<slides.length;b++) slides[b].style.height = h + 'px';
+    goTo(idx, 'auto');
+  }
+  window.addEventListener('resize', function(){ if(reveal.classList.contains('is-open')) layoutSlides(); });
+
+  function syncUI(){
+    for(var k=0;k<dots.length;k++) dots[k].classList.toggle('is-active', k===idx);
+    for(var m=0;m<slides.length;m++){
+      slides[m].setAttribute('aria-hidden', m===idx ? 'false' : 'true');
+      var f = slides[m].querySelectorAll('a,button');
+      for(var q=0;q<f.length;q++){
+        if(m===idx) f[q].removeAttribute('tabindex'); else f[q].setAttribute('tabindex','-1');
+      }
+    }
+    prevBtn.disabled = (idx === 0);
+    nextBtn.disabled = (idx === total-1);
+  }
+
+  // El desplazamiento lo hace el propio navegador: sin arrastre a mano
+  function goTo(n, behavior){
+    idx = Math.max(0, Math.min(total-1, n));
+    var target = idx * viewp.clientWidth;
+    try{ viewp.scrollTo({ left: target, behavior: behavior || 'smooth' }); }
+    catch(e){ viewp.scrollLeft = target; }
+    // Red de seguridad: si el scroll suave no se aplica (reduced-motion, navegadores
+    // viejos o pestaña en segundo plano), colocamos la posicion a mano.
+    setTimeout(function(){
+      if(Math.abs(viewp.scrollLeft - target) > 4) viewp.scrollLeft = target;
+    }, 420);
+    syncUI();
+  }
+
+  prevBtn.addEventListener('click', function(){ goTo(idx-1); });
+  nextBtn.addEventListener('click', function(){ goTo(idx+1); });
+
+  // El scroll nativo (dedo, trackpad, barra) manda: leemos la posición y sincronizamos
+  function syncFromScroll(){
+    var n = Math.round(viewp.scrollLeft / Math.max(1, viewp.clientWidth));
+    n = Math.max(0, Math.min(total-1, n));
+    if(n !== idx){ idx = n; syncUI(); }
+  }
+  var scrollTick = null;
+  viewp.addEventListener('scroll', function(){
+    if(scrollTick) clearTimeout(scrollTick);
+    scrollTick = setTimeout(syncFromScroll, 90);
+  }, {passive:true});
+  // Respaldos: Safari no siempre emite 'scroll' al terminar el desplazamiento por inercia
+  viewp.addEventListener('scrollend', syncFromScroll);
+  viewp.addEventListener('touchend', function(){
+    setTimeout(syncFromScroll, 160);
+    setTimeout(syncFromScroll, 520);
+  }, {passive:true});
+
+  /* Arrastre con el ratón (en escritorio no hay gesto táctil) */
+  var mDown = false, mStartX = 0, mStartScroll = 0, moved = 0;
+  viewp.addEventListener('mousedown', function(e){
+    if(e.target.closest('a,button')) return;
+    mDown = true; moved = 0;
+    mStartX = e.clientX; mStartScroll = viewp.scrollLeft;
+    viewp.style.cursor = 'grabbing';
+  });
+  window.addEventListener('mousemove', function(e){
+    if(!mDown) return;
+    var d = e.clientX - mStartX;
+    moved = Math.abs(d);
+    if(moved > 3) e.preventDefault();
+    viewp.scrollLeft = mStartScroll - d;
+  });
+  window.addEventListener('mouseup', function(){
+    if(!mDown) return;
+    mDown = false; viewp.style.cursor = '';
+    goTo(Math.round(viewp.scrollLeft / Math.max(1, viewp.clientWidth)));
+  });
+  viewp.addEventListener('click', function(e){
+    if(moved > 8){ e.preventDefault(); e.stopPropagation(); moved = 0; }
+  }, true);
+
+  /* Teclado */
+  viewp.setAttribute('tabindex','0');
+  viewp.setAttribute('role','group');
+  viewp.setAttribute('aria-label','Opciones de mesa de regalos');
+  viewp.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowLeft'){  e.preventDefault(); goTo(idx-1); }
+    if(e.key === 'ArrowRight'){ e.preventDefault(); goTo(idx+1); }
+  });
+
+  /* ---------- Confetti ---------- */
+  function burst(){
+    if(!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var stage = canvas.parentElement;
+    var W = stage.offsetWidth, H = stage.offsetHeight;
+    canvas.width = W*dpr; canvas.height = H*dpr;
+    ctx.scale(dpr,dpr);
+
+    var colors = ['#c9a46a','#e1d4bf','#7a5e33','#4a7bb6','#1e3a89','#FBF8F2','#a7c3e2'];
+    var parts = [];
+    var cx = W/2, cy = H/2;
+    var n = window.innerWidth < 520 ? 70 : 120;
+    for(var i=0;i<n;i++){
+      var a = (Math.PI * 2 * i / n) + (i % 7) * 0.11;
+      var sp = 3.4 + (i % 11) * 0.62;
+      parts.push({
+        x:cx, y:cy,
+        vx: Math.cos(a) * sp * (0.6 + (i%5)*0.14),
+        vy: Math.sin(a) * sp * (0.6 + (i%3)*0.2) - 3.6,
+        w: 5 + (i%4)*2.4,
+        h: 3 + (i%3)*2,
+        rot: (i%360) * 0.0175,
+        vr: ((i%2?1:-1)) * (0.06 + (i%5)*0.02),
+        c: colors[i % colors.length],
+        life: 1
+      });
+    }
+    var t0 = null;
+    function frame(ts){
+      if(t0 === null) t0 = ts;
+      var el = (ts - t0) / 1000;
+      ctx.clearRect(0,0,W,H);
+      var alive = false;
+      for(var i=0;i<parts.length;i++){
+        var p = parts[i];
+        p.vy += 0.14;
+        p.vx *= 0.992;
+        p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+        p.life = Math.max(0, 1 - el/2.6);
+        if(p.life > 0 && p.y < H + 40){
+          alive = true;
+          ctx.save();
+          ctx.globalAlpha = p.life;
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot);
+          ctx.fillStyle = p.c;
+          ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+          ctx.restore();
+        }
+      }
+      if(alive) requestAnimationFrame(frame);
+      else ctx.clearRect(0,0,W,H);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  /* ---------- Apertura / cierre ---------- */
+  var isOpen = false;
+
+  // La seccion contenedora usa `contain:layout paint`, que crea un contenedor para
+  // position:fixed y RECORTA el modal (en iOS lo deja fuera de vista). Lo sacamos al
+  // <body> la primera vez que se abre para que el fixed sea siempre respecto al viewport.
+  if(reveal.parentElement !== document.body) document.body.appendChild(reveal);
+
+  // Bloqueo de scroll compatible con iOS: overflow:hidden en body NO basta en Safari.
+  var savedScrollY = 0;
+  function lockScroll(){
+    savedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    document.body.style.position = 'fixed';
+    document.body.style.top      = (-savedScrollY) + 'px';
+    document.body.style.left     = '0';
+    document.body.style.right    = '0';
+    document.body.style.width    = '100%';
+    document.body.classList.add('gift-locked');
+  }
+  function unlockScroll(){
+    document.body.classList.remove('gift-locked');
+    document.body.style.position = '';
+    document.body.style.top      = '';
+    document.body.style.left     = '';
+    document.body.style.right    = '';
+    document.body.style.width    = '';
+    window.scrollTo(0, savedScrollY);
+  }
+
+  function openGift(){
+    if(isOpen) return;
+    isOpen = true;
+    box.classList.add('is-open');
+    box.setAttribute('aria-expanded','true');
+    if(cta) cta.classList.add('is-hidden');
+    burst();
+    setTimeout(function(){
+      reveal.classList.add('is-open');
+      lockScroll();
+      // en iOS el layout del modal recien mostrado tarda un frame en estabilizarse
+      requestAnimationFrame(function(){
+        layoutSlides();
+        goTo(0, 'auto');
+        if(viaTeclado && closeB) closeB.focus();
+      });
+    }, 240);
+  }
+
+  function closeGift(){
+    if(!isOpen) return;
+    isOpen = false;
+    reveal.classList.remove('is-open');
+    unlockScroll();
+    // La caja vuelve a cerrarse para poder abrirla otra vez
+    setTimeout(function(){
+      box.classList.remove('is-open');
+      box.setAttribute('aria-expanded','false');
+      if(cta) cta.classList.remove('is-hidden');
+      goTo(0, 'auto');
+    }, 420);
+    if(viaTeclado) box.focus();
+    viaTeclado = false;
+  }
+
+  var viaTeclado = false;
+  box.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' ') viaTeclado = true;
+  });
+  box.addEventListener('mousedown',  function(){ viaTeclado = false; });
+  box.addEventListener('touchstart', function(){ viaTeclado = false; }, {passive:true});
+  box.addEventListener('click', openGift);
+  if(closeB) closeB.addEventListener('click', closeGift);
+  reveal.addEventListener('click', function(e){ if(e.target === reveal) closeGift(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && isOpen) closeGift(); });
+})();
+
+
+
+document.querySelectorAll('.gr-copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var v=btn.dataset.clabe, msg=document.getElementById('gr-copied');
+    function ok(){ btn.classList.add('is-copied'); if(msg) msg.textContent='CLABE copiada'; setTimeout(function(){ btn.classList.remove('is-copied'); if(msg) msg.textContent=''; },2200); }
+    if(navigator.clipboard){ navigator.clipboard.writeText(v).then(ok,function(){}); }
+    else { var ta=document.createElement('textarea'); ta.value=v; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');ok();}catch(e){} ta.remove(); }
+  });
+});
+gsap.fromTo('.giftbox-stage > div',{opacity:0,y:34},{opacity:1,y:0,duration:1,ease:'power3.out',immediateRender:false,scrollTrigger:{trigger:'.giftbox-stage',start:'top 90%',once:true}});
+
+// ------ LLUVIA DE SOBRES (boda-jeffersson-y-vanessa) ------
+/* Lluvia de sobres — cae hasta que la sección se centra, ahí aterriza uno */
+  (function(){
+    var sec=document.getElementById('regalos'),rain=document.getElementById('envRain'),
+        btn=document.getElementById('envGift'),body=document.getElementById('envGiftBody'),
+        hint=document.getElementById('envGiftHint');
+    if(!sec||!rain||!btn)return;
+    var raining=true,landed=false,spawnCall=null,alive=0;
+    var MAX_ALIVE=18;
+
+    function makeEnvelope(){
+      if(alive>=MAX_ALIVE)return;
+      alive++;
+      var el=document.createElementNS('http://www.w3.org/2000/svg','svg');
+      el.setAttribute('viewBox','0 0 34 24');
+      el.setAttribute('class','env-rain-item');
+      var w=16+Math.random()*16;
+      el.style.width=w+'px';el.style.height=(w*24/34)+'px';
+      el.style.left=(Math.random()*100)+'%';
+      el.innerHTML='<rect x="1" y="1" width="32" height="22" rx="2.5" fill="#fbf8f1" stroke="#1e3a89" stroke-width="1.2"/>'+
+                   '<path d="M1 1 L17 13 L33 1" fill="none" stroke="#1e3a89" stroke-width="1.2" stroke-linejoin="round"/>';
+      rain.appendChild(el);
+      var H=sec.offsetHeight+80,dur=5+Math.random()*4;
+      function kill(){if(el.parentNode){el.remove();alive--;}}
+      gsap.timeline({onComplete:kill})
+        .fromTo(el,{y:-46,x:0,rotation:(Math.random()-.5)*50,opacity:0},
+                   {y:H,x:(Math.random()-.5)*70,rotation:(Math.random()-.5)*160,
+                    duration:dur,ease:'none'},0)
+        .fromTo(el,{opacity:0},{opacity:.75,duration:dur*.18,ease:'power1.out'},0)
+        .to(el,{opacity:0,duration:dur*.25,ease:'power1.in'},dur*.75);
+    }
+
+    /* Spawn por el ticker de GSAP (no setInterval): se pausa junto con la
+       animación si la pestaña pasa a segundo plano, evitando acumulación. */
+    function scheduleSpawn(){
+      spawnCall=gsap.delayedCall(.52,function(){
+        if(!raining)return;
+        makeEnvelope();
+        scheduleSpawn();
+      });
+    }
+    function startRain(){
+      for(var i=0;i<7;i++)gsap.delayedCall(i*.26,makeEnvelope);
+      scheduleSpawn();
+    }
+    function stopRain(){
+      raining=false;
+      if(spawnCall)spawnCall.kill();
+      gsap.to(rain,{opacity:0,duration:1.1,ease:'power2.out',
+        onComplete:function(){rain.innerHTML='';alive=0;}});
+    }
+
+    function land(){
+      if(landed)return;landed=true;
+      stopRain();
+      /* Un sobre se detiene: cae desde arriba y se asienta con rebote */
+      gsap.fromTo(btn,
+        {opacity:0,y:-150,rotation:-12,scale:.82},
+        {opacity:1,y:0,rotation:0,scale:1,duration:1.15,ease:'back.out(1.5)',
+         onComplete:function(){
+           if(body)body.classList.add('landed');
+           if(hint)hint.classList.add('show');
+         }});
+    }
+
+    startRain();
+    /* Aterriza cuando la sección queda centrada. Se usa 55% en vez de 'center'
+       porque el reveal genérico desplaza las secciones aún no visibles 28px,
+       y con 'center center' exacto el umbral queda fuera de alcance. */
+    ScrollTrigger.create({trigger:sec,start:'center 55%',once:true,onEnter:land,onEnterBack:land});
+
+    function toggle(e){
+      if(e)e.preventDefault();
+      if(!landed)return;
+      var open=btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+      if(open&&body)body.classList.remove('landed');
+      ScrollTrigger.refresh();
+    }
+    btn.addEventListener('click',toggle);
+  })();
 
 window.addEventListener('resize',()=>ScrollTrigger.refresh());
 </script>
