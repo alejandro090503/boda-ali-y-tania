@@ -2246,6 +2246,15 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 @media (prefers-reduced-motion:reduce){.dc-card-img img{animation:none}}
 #avCycle{margin-bottom:14px}
 #avCycle .swatch-c::before{content:"";position:absolute;left:50%;top:-8%;width:1.5px;height:116%;background:var(--gold-deep);transform:rotate(45deg);opacity:.75}
+
+/* ============ VESTIMENTA: tarjetas compactas ============ */
+.dc-tags{display:flex;flex-direction:column;align-items:center;gap:6px;margin:2px 0 4px}
+.dc-tags span{font-family:var(--serif);font-weight:600;font-size:15px;line-height:1.25;color:var(--ink);padding:5px 10px;border-radius:999px;
+  background:rgba(167,195,226,.22);border:1px solid rgba(74,123,182,.18);text-align:center}
+@media (max-width:360px){.dc-tags span{font-size:14px;padding:4px 8px}}
+.dc-card{padding-bottom:14px}
+.dc-card-cta{width:80%}
+.dcv-desc{font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.5;color:var(--ink-soft);text-align:center;margin:-6px 26px 14px}
 </style>
 </head>
 <body>
@@ -2531,13 +2540,13 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
         <button class="dc-card" type="button" data-look="caballeros" aria-label="Ver ideas de vestimenta para caballeros">
           <span class="dc-card-img"><img src="looks/cab-guayabera.png" alt="Caballero con guayabera y pantalón de lino" decoding="async"></span>
           <span class="dc-card-role">Caballeros</span>
-          <span class="dc-card-txt">Guayabera fina o traje/conjunto de lino (pantalón y camisa de lino sin corbata). Mocasines o alpargatas de vestir.</span>
+          <span class="dc-tags"><span>Guayabera fina</span><span>Lino, sin corbata</span><span>Mocasines o alpargatas</span></span>
           <span class="dc-card-cta">Ver ideas</span>
         </button>
         <button class="dc-card" type="button" data-look="damas" aria-label="Ver ideas de vestimenta para damas">
           <span class="dc-card-img"><img src="looks/dama-terracota.png" alt="Dama con vestido largo terracota" decoding="async"></span>
           <span class="dc-card-role">Damas</span>
-          <span class="dc-card-txt">Vestido largo o midi en telas frescas (lino, gasa, seda o bambula). Se sugiere calzado de tacón ancho, cuñas o sandalias elegantes para mayor comodidad en el área de jardín/playa.</span>
+          <span class="dc-tags"><span>Largo o midi</span><span>Telas frescas</span><span>Tacón ancho o sandalias</span></span>
           <span class="dc-card-cta">Ver ideas</span>
         </button>
       </div>
@@ -2546,6 +2555,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
         <div class="dcv-box">
           <button class="dc-viewer-close" id="dcViewerClose" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
           <p class="dcv-head" id="dcvHead"></p>
+          <p class="dcv-desc" id="dcvDesc"></p>
           <div class="dcv-viewport"><div class="dcv-track" id="dcvTrack"></div></div>
           <button class="dcv-nav dcv-prev" id="dcvPrev" type="button" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
           <button class="dcv-nav dcv-next" id="dcvNext" type="button" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -4027,11 +4037,11 @@ if(musicEl && musicEl.readyState >= 2){
   if(viewer.parentNode!==document.body) document.body.appendChild(viewer);
   var track=document.getElementById('dcvTrack'), head=document.getElementById('dcvHead'), cap=document.getElementById('dcvCap'), dots=document.getElementById('dcvDots'), close=document.getElementById('dcViewerClose');
   var LOOKS={
-    caballeros:{head:'Caballeros',items:[
+    caballeros:{head:'Caballeros',desc:'Guayabera fina o traje/conjunto de lino (pantalón y camisa de lino sin corbata). Mocasines o alpargatas de vestir.',items:[
       {src:'looks/cab-guayabera.png',cap:'Guayabera y pantalón de lino'},
       {src:'looks/cab-1.png',cap:'Chaleco y pantalón de lino'},
       {src:'looks/cab-2.png',cap:'Traje de lino en tono arena'}]},
-    damas:{head:'Damas',items:[
+    damas:{head:'Damas',desc:'Vestido largo o midi en telas frescas (lino, gasa, seda o bambula). Se sugiere calzado de tacón ancho, cuñas o sandalias elegantes para mayor comodidad en el área de jardín/playa.',items:[
       {src:'looks/dama-3.png',cap:'Vestido largo champagne'},
       {src:'looks/dama-salvia.png',cap:'Vestido largo salvia'},
       {src:'looks/dama-terracota.png',cap:'Vestido largo terracota'}]}
@@ -4041,7 +4051,7 @@ if(musicEl && musicEl.readyState >= 2){
   function go(i){ idx=(i+items.length)%items.length; render(); }
   function open(key){
     var L=LOOKS[key]; if(!L) return;
-    items=L.items; idx=0; last=document.activeElement; head.textContent=L.head; track.innerHTML=''; dots.innerHTML='';
+    items=L.items; idx=0; last=document.activeElement; head.textContent=L.head; var dd=document.getElementById('dcvDesc'); if(dd) dd.textContent=L.desc||''; track.innerHTML=''; dots.innerHTML='';
     items.forEach(function(it,i){
       var sl=document.createElement('figure'); sl.className='dcv-slide';
       sl.innerHTML='<div class="dcv-frame"><div class="dcv-mat"><img alt=""></div></div>';
