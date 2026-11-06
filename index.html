@@ -2132,15 +2132,14 @@ body.gift-locked{overflow:hidden;-webkit-overflow-scrolling:auto;overscroll-beha
 /* ============ FONDOS DE OLAS (ink/) ============ */
 .bg-olas-azul,.bg-olas-arena{background-color:#faf7ee!important;background-repeat:no-repeat,no-repeat!important;
   background-position:top center,bottom center!important;background-size:100% clamp(170px,46vw,330px),100% clamp(170px,46vw,330px)!important}
-.bg-olas-azul{background-image:url(ink/olas-azul-top.webp),url(ink/olas-azul-bot.webp)!important}
-.bg-olas-arena{background-image:url(ink/olas-arena-top.webp),url(ink/olas-arena-bot.webp)!important}
+.bg-olas-azul,.bg-olas-arena{background-image:none!important}
 .bg-olas-azul,.bg-olas-arena{padding-top:max(min(18vh,170px),clamp(150px,40vw,290px))!important;padding-bottom:max(min(18vh,170px),clamp(150px,40vw,290px))!important}
-.countdown{background:rgb(250,247,238) url(ink/banda.webp) center 62%/max(100%,620px) auto no-repeat!important}
+.countdown{background:rgb(250,247,238)!important}
 .countdown .cd-block{background:rgba(255,255,255,.88)}
 .date-hero{background:#152b66!important}
 .date-hero::after{background:linear-gradient(to bottom,rgba(10,26,69,.35),rgba(10,26,69,.2),rgba(10,26,69,.35)),url(ink/noche.webp) 50% 50%/cover no-repeat!important}
-footer{background:#0a1a45 url(ink/noche.webp) center/cover no-repeat!important}
-footer::before{content:"";position:absolute;inset:0;background:rgba(10,26,69,.45);pointer-events:none}
+footer{background:#0a1a45!important}
+
 footer .footer-inner{position:relative;z-index:1}
 
 /* ============ LETRA ELEGANTE: Cormorant en lugar de la sans (pedido 6 nov) ============ */
@@ -2175,6 +2174,22 @@ footer .sf-top{z-index:0}
 @media (min-width:900px){.date-hero,footer{--fade:360px}}
 .date-hero{padding-top:calc(var(--fade) + 20px)!important;padding-bottom:calc(var(--fade) + 20px)!important}
 footer{padding-top:calc(var(--fade) + 10px)!important}
+
+/* ============ FONDOS EN MOVIMIENTO (solo los que están en pantalla) ============ */
+.wv{position:absolute;left:-8%;width:116%;pointer-events:none;z-index:0;background-repeat:no-repeat;
+  animation:wvDrift 16s ease-in-out infinite alternate;animation-play-state:paused}
+.wv.on{animation-play-state:running}
+.wv-top,.wv-bot{height:clamp(170px,46vw,330px);background-size:100% 100%}
+.wv-top{top:0;transform-origin:50% 0}
+.wv-bot{bottom:0;transform-origin:50% 100%;animation-duration:19s;animation-direction:alternate-reverse}
+.wv-mid{top:0;bottom:0;background:url(ink/banda.webp) center 62%/max(100%,620px) auto no-repeat;animation-name:wvMid;animation-duration:18s}
+.wv-night{inset:0;left:0;width:100%;background:linear-gradient(rgba(10,26,69,.45),rgba(10,26,69,.45)),url(ink/noche.webp) center/cover no-repeat;animation-name:wvNight;animation-duration:26s;transform-origin:50% 50%}
+@keyframes wvDrift{0%{transform:translate3d(-3%,0,0) scaleY(1)}50%{transform:translate3d(0,0,0) scaleY(1.07)}100%{transform:translate3d(3%,0,0) scaleY(.96)}}
+@keyframes wvMid{0%{transform:translate3d(-3%,-6px,0) scale(1)}50%{transform:translate3d(0,4px,0) scale(1.04)}100%{transform:translate3d(3%,-2px,0) scale(1.01)}}
+@keyframes wvNight{0%{transform:scale(1.04) translate3d(-1.5%,-1%,0) rotate(-.6deg)}100%{transform:scale(1.12) translate3d(1.5%,1%,0) rotate(.6deg)}}
+.date-hero::after{animation:wvNight 26s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.wv,.date-hero::after{animation:none!important}}
+.nm-head{justify-content:flex-end!important}
 </style>
 </head>
 <body>
@@ -2231,15 +2246,12 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 <div class="nv-progress" id="nvProgress" aria-hidden="true"></div>
 <nav class="nv" id="nv" aria-label="Secciones">
   <div class="nv-bar">
-    <button type="button" class="nv-home" data-go="inicio" aria-label="Ir al inicio"><span class="nv-mono" aria-hidden="true">T<i>&amp;</i>A</span></button>
     <ul class="nv-links"><li><button type="button" class="nv-link" data-go="invitacion"><span class="nv-pill" aria-hidden="true"></span>Invitación</button></li><li><button type="button" class="nv-link" data-go="ubicacion"><span class="nv-pill" aria-hidden="true"></span>Ubicación</button></li><li><button type="button" class="nv-link" data-go="itinerario"><span class="nv-pill" aria-hidden="true"></span>Itinerario</button></li><li><button type="button" class="nv-link" data-go="vestimenta"><span class="nv-pill" aria-hidden="true"></span>Vestimenta</button></li><li><button type="button" class="nv-link" data-go="hospedaje"><span class="nv-pill" aria-hidden="true"></span>Hospedaje</button></li><li><button type="button" class="nv-link" data-go="regalos"><span class="nv-pill" aria-hidden="true"></span>Regalos</button></li><li><button type="button" class="nv-link" data-go="confirmar"><span class="nv-pill" aria-hidden="true"></span>Confirmar</button></li></ul>
-    <span class="nv-sep" aria-hidden="true"></span>
-    <button type="button" class="nv-icon" id="nvShare" aria-label="Compartir invitación"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg></button>
     <button type="button" class="nv-menu" id="nvOpen" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menú</span></button>
   </div>
 </nav>
 <div class="nm" id="nm" role="dialog" aria-modal="true" aria-label="Menú" hidden>
-  <div class="nm-head"><span class="nv-mono nm-mono" aria-hidden="true">T<i>&amp;</i>A</span><button type="button" class="nm-close" id="nmClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <div class="nm-head"><button type="button" class="nm-close" id="nmClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
   <ul class="nm-list"><li><button type="button" class="nm-link" data-go="inicio"><span class="nm-n">01</span><span class="nm-t">Inicio</span></button></li><li><button type="button" class="nm-link" data-go="invitacion"><span class="nm-n">02</span><span class="nm-t">Invitación</span></button></li><li><button type="button" class="nm-link" data-go="ubicacion"><span class="nm-n">03</span><span class="nm-t">Ubicación</span></button></li><li><button type="button" class="nm-link" data-go="itinerario"><span class="nm-n">04</span><span class="nm-t">Itinerario</span></button></li><li><button type="button" class="nm-link" data-go="vestimenta"><span class="nm-n">05</span><span class="nm-t">Vestimenta</span></button></li><li><button type="button" class="nm-link" data-go="padrinos"><span class="nm-n">06</span><span class="nm-t">Padrinos</span></button></li><li><button type="button" class="nm-link" data-go="hospedaje"><span class="nm-n">07</span><span class="nm-t">Hospedaje</span></button></li><li><button type="button" class="nm-link" data-go="regalos"><span class="nm-n">08</span><span class="nm-t">Regalos</span></button></li><li><button type="button" class="nm-link" data-go="confirmar"><span class="nm-n">09</span><span class="nm-t">Confirmar</span></button></li></ul>
   <p class="nm-foot">Sábado 6 de febrero de 2027 · Acapulco</p>
 </div>
@@ -4174,7 +4186,7 @@ if(musicEl && musicEl.readyState >= 2){
   openB.addEventListener('click',openMenu);
   closeB.addEventListener('click',function(){ closeMenu(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !nm.hidden) closeMenu(); });
-  document.getElementById('nvShare').addEventListener('click',function(){
+  var shareB=document.getElementById('nvShare'); if(shareB) shareB.addEventListener('click',function(){
     var data={title:document.title,text:'Tania & Ali · 6 de febrero de 2027 · Acapulco',url:location.origin+'/'};
     if(navigator.share){ navigator.share(data).catch(function(){}); }
     else if(navigator.clipboard){ navigator.clipboard.writeText(data.url).then(function(){ var b=document.getElementById('nvShare'); b.style.color='var(--gold)'; setTimeout(function(){ b.style.color=''; },1200); }); }
@@ -4591,6 +4603,21 @@ gsap.fromTo('.giftbox-stage > div',{opacity:0,y:34},{opacity:1,y:0,duration:1,ea
   })();
 
 
+
+// ------ FONDOS EN MOVIMIENTO: capas animadas, solo corren en pantalla ------
+(function(){
+  function layer(sec,cls,img){ var d=document.createElement('div'); d.className='wv '+cls; d.setAttribute('aria-hidden','true'); if(img) d.style.backgroundImage='url('+img+')'; sec.insertBefore(d,sec.firstChild); return d; }
+  document.querySelectorAll('.bg-olas-azul,.bg-olas-arena').forEach(function(sec){
+    var n=sec.classList.contains('bg-olas-azul')?'olas-azul':'olas-arena';
+    layer(sec,'wv-bot','ink/'+n+'-bot.webp'); layer(sec,'wv-top','ink/'+n+'-top.webp');
+  });
+  var cd=document.querySelector('.countdown'); if(cd) layer(cd,'wv-mid');
+  var ft=document.querySelector('footer'); if(ft) layer(ft,'wv-night');
+  var els=document.querySelectorAll('.wv');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('on'); }); return; }
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('on',e.isIntersecting); }); },{rootMargin:'120px 0px'});
+  els.forEach(function(e){ io.observe(e); });
+})();
 // ------ FUNDIDO UNIFORME: dos capas por sección (arriba / abajo) ------
 (function(){
   document.querySelectorAll('.wrap > section, .wrap > footer').forEach(function(sec){
