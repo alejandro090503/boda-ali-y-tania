@@ -2214,6 +2214,38 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 .hero-scroll::after{background:linear-gradient(to bottom,var(--gold),transparent)!important}
 .hero-waves .hw1{fill:rgba(74,123,182,.18)!important}
 .hero-waves .hw2{fill:rgba(255,255,255,.45)!important}
+
+/* ============ PORTADA: 3 renglones simétricos, fecha en 1 renglón ============ */
+.hero-name{display:flex!important;flex-direction:column;align-items:center;gap:0;line-height:.95!important}
+.hero-name .hero-name-p,.hero-name .hero-name-l{display:block!important;text-align:center}
+.hero-name .hero-and{display:block!important;margin:6px auto 10px!important;padding:0!important;text-align:center;line-height:1!important;font-size:clamp(46px,12vw,90px)!important}
+.hero-date{flex-wrap:nowrap!important;white-space:nowrap;gap:clamp(8px,2.6vw,20px)!important;letter-spacing:.2em!important;font-size:clamp(18px,5.4vw,32px)!important;margin-top:44px!important}
+/* ============ COLORES SUGERIDOS: una bola que cambia de color ============ */
+.sw-cycle{flex-direction:column!important;align-items:center;gap:18px}
+.sw-cycle .swatch{animation:swFloat 5s ease-in-out infinite}
+.sw-cycle .swatch-c{width:clamp(58px,15vw,74px)!important;height:clamp(58px,15vw,74px)!important;margin-bottom:12px!important;transition:background-color 1.1s ease,box-shadow 1.1s ease}
+.sw-cycle .swatch-n{transition:opacity .45s ease;min-width:140px;text-align:center;font-size:15px!important}
+.sw-dots{display:flex;gap:10px}
+.sw-dots span{width:10px;height:10px;border-radius:50%;opacity:.45;transform:scale(.85);transition:opacity .4s,transform .4s}
+.sw-dots span.on{opacity:1;transform:scale(1.25)}
+
+/* ============ VESTIMENTA en 2 columnas con dibujo (como enedina-y-marco) ============ */
+.dc-outfits{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:620px;margin:6px auto 52px}
+.dc-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:18px 10px 16px;border-radius:18px;cursor:pointer;
+  border:1px solid var(--hair-gold);background:linear-gradient(180deg,#fff,var(--surface));box-shadow:0 14px 34px -22px rgba(21,43,102,.4);
+  font:inherit;color:inherit;-webkit-tap-highlight-color:transparent;transition:transform .3s,box-shadow .3s}
+.dc-card:active{transform:scale(.98)}
+.dc-card-img{display:flex;align-items:flex-end;justify-content:center;height:clamp(190px,52vw,280px);width:100%}
+.dc-card-img img{max-height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(21,43,102,.18));animation:dcFloatSway 5.4s ease-in-out infinite;transform-origin:50% 100%}
+.dc-card:nth-child(2) .dc-card-img img{animation-delay:-2.7s}
+@keyframes dcFloatSway{0%,100%{translate:0 0;rotate:0deg}30%{translate:0 -6px;rotate:-1.2deg}70%{translate:0 -3px;rotate:1.2deg}}
+.dc-card-role{font-family:var(--display);font-style:italic;font-weight:500;font-size:22px;color:var(--accent);margin-top:4px}
+.dc-card-txt{font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.5;color:var(--ink)}
+.dc-card-cta{margin-top:auto;padding-top:8px;font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);border-top:1px solid var(--hair-gold);width:70%}
+@media (min-width:700px){.dc-outfits{gap:22px}.dc-card{padding:26px 20px 20px}.dc-card-txt{font-size:17px}}
+@media (prefers-reduced-motion:reduce){.dc-card-img img{animation:none}}
+#avCycle{margin-bottom:14px}
+#avCycle .swatch-c::before{content:"";position:absolute;left:50%;top:-8%;width:1.5px;height:116%;background:var(--gold-deep);transform:rotate(45deg);opacity:.75}
 </style>
 </head>
 <body>
@@ -2311,7 +2343,6 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
       <div class="hero-date" data-anim="hero-date">
         <span>06</span><span class="sep">·</span><span>Febrero</span><span class="sep">·</span><span>2027</span>
       </div>
-      <div class="hero-place" data-anim="hero-place">Acapulco, Guerrero</div>
     </div>
     <div class="hero-scroll">Descubre</div>
     <div class="hero-waves" aria-hidden="true">
@@ -2496,27 +2527,18 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
       <div class="dress-sub">tropical elegant</div>
       <p class="dress-lead">Rigurosa playa · Formal playero</p>
 
-      <div class="dc-guides">
-        <div class="dc-guide">
-          <div class="dc-guide-rol">Mujeres</div>
-          <p>Vestido largo o midi en telas frescas (lino, gasa, seda o bambula). Se sugiere calzado de tacón ancho, cuñas o sandalias elegantes para mayor comodidad en el área de jardín/playa.</p>
-        </div>
-        <div class="dc-guide">
-          <div class="dc-guide-rol">Hombres</div>
-          <p>Guayabera fina o traje/conjunto de lino (pantalón y camisa de lino sin corbata). Mocasines o alpargatas de vestir.</p>
-        </div>
-      </div>
-
-      <div class="dc-looks">
-        <button class="dc-look" type="button" data-look="caballeros" aria-label="Ver ideas de vestimenta para caballeros">
-          <span class="dc-look-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l4 3 4-3 3 2.2c1.2.9 1.9 2.3 1.9 3.8V21H3V9c0-1.5.7-2.9 1.9-3.8L8 3z"/><path d="M12 6v15"/><path d="M9.4 4.2L12 9l2.6-4.8"/></svg></span>
-          <span class="dc-look-txt"><span class="dc-look-rol">Caballeros</span><span class="dc-look-cta">Ver ideas</span></span>
-          <span class="dc-look-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+<div class="dc-outfits">
+        <button class="dc-card" type="button" data-look="caballeros" aria-label="Ver ideas de vestimenta para caballeros">
+          <span class="dc-card-img"><img src="looks/cab-guayabera.png" alt="Caballero con guayabera y pantalón de lino" decoding="async"></span>
+          <span class="dc-card-role">Caballeros</span>
+          <span class="dc-card-txt">Guayabera fina o traje/conjunto de lino (pantalón y camisa de lino sin corbata). Mocasines o alpargatas de vestir.</span>
+          <span class="dc-card-cta">Ver ideas</span>
         </button>
-        <button class="dc-look" type="button" data-look="damas" aria-label="Ver ideas de vestimenta para damas">
-          <span class="dc-look-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l-1.4 5.2L21 21H3l7.4-12.8L9 3z"/><path d="M10.6 8.2h2.8"/></svg></span>
-          <span class="dc-look-txt"><span class="dc-look-rol">Damas</span><span class="dc-look-cta">Ver ideas</span></span>
-          <span class="dc-look-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+        <button class="dc-card" type="button" data-look="damas" aria-label="Ver ideas de vestimenta para damas">
+          <span class="dc-card-img"><img src="looks/dama-terracota.png" alt="Dama con vestido largo terracota" decoding="async"></span>
+          <span class="dc-card-role">Damas</span>
+          <span class="dc-card-txt">Vestido largo o midi en telas frescas (lino, gasa, seda o bambula). Se sugiere calzado de tacón ancho, cuñas o sandalias elegantes para mayor comodidad en el área de jardín/playa.</span>
+          <span class="dc-card-cta">Ver ideas</span>
         </button>
       </div>
 
@@ -2534,22 +2556,17 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 
       <div class="dress-section dress-sug">
         <div class="swatch-group-title">Colores sugeridos</div>
-        <div class="dress-swatches">
-          <div class="swatch"><div class="swatch-c" style="background:#e1d4bf"></div><div class="swatch-n">Arena</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:#c58e3a"></div><div class="swatch-n">Ocre</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:#d4806b"></div><div class="swatch-n">Terracota</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:#9cac97"></div><div class="swatch-n">Salvia</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:#f3ebdd;border:1px solid #c9ccd6"></div><div class="swatch-n">Marfil</div></div>
+        <div class="dress-swatches sw-cycle" id="swCycle" aria-live="polite">
+          <div class="swatch"><div class="swatch-c" id="swBall" style="background:#e1d4bf"></div><div class="swatch-n" id="swName">Arena</div></div>
+          <div class="sw-dots" aria-hidden="true"><span class="on" style="background:#e1d4bf"></span><span style="background:#c58e3a"></span><span style="background:#d4806b"></span><span style="background:#9cac97"></span><span style="background:#f3ebdd;box-shadow:inset 0 0 0 1px #c9ccd6"></span></div>
         </div>
       </div>
 
       <div class="dress-avoid">
         <div class="swatch-group-title">Colores a evitar</div>
-        <div class="avoid-list">
-          <div class="avoid-item"><span class="avoid-c" style="background:#a7c3e2"></span>Azul cielo</div>
-          <div class="avoid-item"><span class="avoid-c" style="background:#FFFFFF;border:1px solid #c9ccd6"></span>Blanco</div>
-          <div class="avoid-item"><span class="avoid-c" style="background:#4a7bb6"></span>Azul</div>
-          <div class="avoid-item"><span class="avoid-c" style="background:#1e3a89"></span>Azul marino</div>
+        <div class="dress-swatches sw-cycle" id="avCycle" aria-live="polite">
+          <div class="swatch"><div class="swatch-c" style="background:#a7c3e2"></div><div class="swatch-n">Azul cielo</div></div>
+          <div class="sw-dots" aria-hidden="true"><span class="on" style="background:#a7c3e2"></span><span style="background:#FFFFFF;box-shadow:inset 0 0 0 1px #c9ccd6"></span><span style="background:#4a7bb6"></span><span style="background:#1e3a89"></span></div>
         </div>
         <div class="avoid-note">Con cariño, te pedimos evitar estos tonos el día de la boda.</div>
       </div>
@@ -3079,7 +3096,6 @@ function launchInvitation(){
     .fromTo('.hero-and',{opacity:0,scale:.4,rotate:-20},{opacity:1,scale:1,rotate:0,duration:.9,ease:'back.out(1.6)'},'-=.6')
     .fromTo(lChars,{opacity:0,y:80,rotateX:-60},{opacity:1,y:0,rotateX:0,duration:1.1,stagger:.035,ease:'power4.out'},'-=.7')
     .fromTo('.hero-date > *',{opacity:0,y:12},{opacity:1,y:0,duration:.7,stagger:.06,ease:'power2.out'},'-=.4')
-    .fromTo('.hero-place',{opacity:0,y:10},{opacity:1,y:0,duration:.8},'-=.4')
     .fromTo('.hero-scroll',{opacity:0},{opacity:.7,duration:.8},'-=.3');
 
   startParticles();
@@ -4012,6 +4028,7 @@ if(musicEl && musicEl.readyState >= 2){
   var track=document.getElementById('dcvTrack'), head=document.getElementById('dcvHead'), cap=document.getElementById('dcvCap'), dots=document.getElementById('dcvDots'), close=document.getElementById('dcViewerClose');
   var LOOKS={
     caballeros:{head:'Caballeros',items:[
+      {src:'looks/cab-guayabera.png',cap:'Guayabera y pantalón de lino'},
       {src:'looks/cab-1.png',cap:'Chaleco y pantalón de lino'},
       {src:'looks/cab-2.png',cap:'Traje de lino en tono arena'}]},
     damas:{head:'Damas',items:[
@@ -4036,7 +4053,7 @@ if(musicEl && musicEl.readyState >= 2){
     document.body.style.overflow='hidden'; close.focus();
   }
   function hide(){ viewer.classList.remove('on'); document.body.style.overflow=''; setTimeout(function(){ viewer.setAttribute('hidden',''); },300); if(last&&last.focus) last.focus(); }
-  document.querySelectorAll('.dc-look').forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); open(b.dataset.look); }); });
+  document.querySelectorAll('.dc-look,.dc-card').forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); open(b.dataset.look); }); });
   close.addEventListener('click',hide);
   document.getElementById('dcvPrev').addEventListener('click',function(e){ e.stopPropagation(); go(idx-1); });
   document.getElementById('dcvNext').addEventListener('click',function(e){ e.stopPropagation(); go(idx+1); });
@@ -4045,7 +4062,7 @@ if(musicEl && musicEl.readyState >= 2){
   var x0=null;
   track.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
   track.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; x0=null; if(Math.abs(dx)>40) go(idx+(dx<0?1:-1)); },{passive:true});
-  gsap.fromTo('.dc-guide',{opacity:0,y:24},{opacity:1,y:0,duration:1,stagger:.15,ease:'power3.out',scrollTrigger:{trigger:'.dc-guides',start:'top 85%'}});
+  gsap.fromTo('.dc-card',{opacity:0,y:24},{opacity:1,y:0,duration:1,stagger:.15,ease:'power3.out',scrollTrigger:{trigger:'.dc-outfits',start:'top 85%'}});
   gsap.fromTo('.dc-look',{opacity:0,x:-30},{opacity:1,x:0,duration:.9,stagger:.15,ease:'power3.out',scrollTrigger:{trigger:'.dc-looks',start:'top 88%'}});
   gsap.fromTo('.dress-sug .swatch',{opacity:0,scale:.5,y:20},{opacity:1,scale:1,y:0,duration:1,stagger:.08,ease:'back.out(1.6)',scrollTrigger:{trigger:'.dress-sug',start:'top 85%'}});
 })();
@@ -4628,6 +4645,23 @@ gsap.fromTo('.giftbox-stage > div',{opacity:0,y:34},{opacity:1,y:0,duration:1,ea
 
 
 
+
+// ------ COLORES (sugeridos / evitar): una bola que cambia de color ------
+(function(){
+  function cycle(id,C,delay){
+    var wrap=document.getElementById(id); if(!wrap) return;
+    var ball=wrap.querySelector('.swatch-c'), name=wrap.querySelector('.swatch-n'), dots=wrap.querySelectorAll('.sw-dots span'), i=0;
+    function show(k){
+      i=k; ball.style.background=C[i][0]; ball.style.border=(C[i][0]==='#FFFFFF'||C[i][0]==='#f3ebdd')?'1px solid #c9ccd6':'1px solid var(--hair)';
+      name.style.opacity=0; setTimeout(function(){ name.textContent=C[i][1]; name.style.opacity=1; },450);
+      dots.forEach(function(d,j){ d.classList.toggle('on',j===i); });
+    }
+    dots.forEach(function(d,j){ d.style.cursor='pointer'; d.addEventListener('click',function(){ show(j); }); });
+    setTimeout(function(){ setInterval(function(){ show((i+1)%C.length); }, 2400); }, delay);
+  }
+  cycle('swCycle',[['#e1d4bf','Arena'],['#c58e3a','Ocre'],['#d4806b','Terracota'],['#9cac97','Salvia'],['#f3ebdd','Marfil']],0);
+  cycle('avCycle',[['#a7c3e2','Azul cielo'],['#FFFFFF','Blanco'],['#4a7bb6','Azul'],['#1e3a89','Azul marino']],1200);
+})();
 // ------ FONDOS EN MOVIMIENTO: capas animadas, solo corren en pantalla ------
 (function(){
   function layer(sec,cls,img){ var d=document.createElement('div'); d.className='wv '+cls; d.setAttribute('aria-hidden','true'); if(img) d.style.backgroundImage='url('+img+')'; sec.insertBefore(d,sec.firstChild); return d; }
