@@ -3496,7 +3496,7 @@ function launchSparkle(){
 function startParticles(){
   if(prefersReduced || !particlesContainer || particlesContainer.childElementCount) return;
   const small = window.innerWidth < 700;
-  const NB = small ? 8 : 12, NG = small ? 3 : 4;
+  const NB = 0, NG = small ? 3 : 4;  /* sin burbujas: pedido del cliente */
   for(let i=0;i<NB;i++){
     const b=document.createElement('span'); b.className='bubble';
     const sz=6+Math.random()*16;
