@@ -26,7 +26,7 @@
 <meta name="twitter:description" content="Nuestra boda frente al mar · Sábado 6 de febrero de 2027 · Acapulco">
 <meta name="twitter:image" content="https://boda-ali-y-tania.vercel.app/og-image.jpg">
 
-<link rel="preload" as="image" href="hero-mar.jpg">
+<link rel="preload" as="image" href="hero-fondo.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Pinyon+Script&family=Italiana&display=swap" rel="stylesheet">
@@ -2190,6 +2190,30 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 .date-hero::after{animation:wvNight 26s ease-in-out infinite alternate}
 @media (prefers-reduced-motion:reduce){.wv,.date-hero::after{animation:none!important}}
 .nm-head{justify-content:flex-end!important}
+
+/* ============ PORTADA CLARA (fondo de olas del usuario, 6 nov) ============ */
+.hero{background:rgb(250,247,238)}
+.hero-bg{filter:none!important;object-position:50% 50%!important}
+.hero-bg-wrap{inset:-5% 0!important}
+.hero-bg{animation-name:kenBurnsSoft!important}
+@keyframes kenBurnsSoft{from{transform:scale(1)}to{transform:scale(1.045) translate(-.6%,-.6%)}}
+.hero-bg-overlay{background:radial-gradient(ellipse 70% 45% at 50% 48%,rgba(250,247,238,.55),rgba(250,247,238,0) 70%)!important}
+.hero-frame{border-color:rgba(122,94,51,.32)!important}
+.hero-frame::before,.hero-frame::after,.hero-frame-corners::before,.hero-frame-corners::after{border-color:rgba(122,94,51,.6)!important}
+.hero-content{color:var(--accent-deep)!important}
+.hero-ornament-top g{stroke:var(--gold)!important}
+.hero-ornament-top circle[fill]{fill:var(--gold)!important}
+.hero-eyebrow{color:var(--gold-deep)!important}
+.hero-eyebrow::before,.hero-eyebrow::after{background:var(--gold)!important}
+.hero-name{color:var(--accent-deep)!important;text-shadow:0 2px 24px rgba(250,247,238,.9)!important}
+.hero-and{color:var(--gold)!important;text-shadow:none!important}
+.hero-date{color:var(--accent)!important;text-shadow:0 1px 14px rgba(250,247,238,.9)!important}
+.hero-date .sep{color:var(--gold)!important}
+.hero-place{color:var(--gold-deep)!important}
+.hero-scroll{color:var(--gold-deep)!important}
+.hero-scroll::after{background:linear-gradient(to bottom,var(--gold),transparent)!important}
+.hero-waves .hw1{fill:rgba(74,123,182,.18)!important}
+.hero-waves .hw2{fill:rgba(255,255,255,.45)!important}
 </style>
 </head>
 <body>
@@ -2263,7 +2287,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 
   <!-- HERO -->
   <section class="hero" id="inicio">
-    <div class="hero-bg-wrap"><img class="hero-bg" src="hero-mar.jpg" alt="" loading="eager"></div>
+    <div class="hero-bg-wrap"><img class="hero-bg" src="hero-fondo.webp" alt="" loading="eager"></div>
     <div class="hero-bg-overlay"></div>
     <div class="hero-frame"></div>
     <div class="hero-frame-corners"></div>
