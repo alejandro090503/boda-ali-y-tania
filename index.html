@@ -16,7 +16,7 @@
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Invitación de boda de Tania y Ali en Acapulco">
+<meta property="og:image:alt" content="Sobre de la invitación de Tania y Ali con sello T&A">
 <meta property="og:locale" content="es_MX">
 
 <!-- Twitter -->
@@ -2135,7 +2135,7 @@ body.gift-locked{overflow:hidden;-webkit-overflow-scrolling:auto;overscroll-beha
 .bg-olas-azul{background-image:url(ink/olas-azul-top.webp),url(ink/olas-azul-bot.webp)!important}
 .bg-olas-arena{background-image:url(ink/olas-arena-top.webp),url(ink/olas-arena-bot.webp)!important}
 .bg-olas-azul,.bg-olas-arena{padding-top:max(min(18vh,170px),clamp(150px,40vw,290px))!important;padding-bottom:max(min(18vh,170px),clamp(150px,40vw,290px))!important}
-.countdown{background:#fff url(ink/banda.webp) center/cover no-repeat!important}
+.countdown{background:rgb(250,247,238) url(ink/banda.webp) center 62%/max(100%,620px) auto no-repeat!important}
 .countdown .cd-block{background:rgba(255,255,255,.88)}
 .date-hero{background:#152b66!important}
 .date-hero::after{background:linear-gradient(to bottom,rgba(10,26,69,.35),rgba(10,26,69,.2),rgba(10,26,69,.35)),url(ink/noche.webp) 50% 50%/cover no-repeat!important}
@@ -2157,13 +2157,31 @@ body{font-variant-numeric:lining-nums;font-size:18px}
 @media (max-width:520px){.countdown-grid{flex-wrap:nowrap!important;gap:8px!important}.cd-block{min-width:0!important;flex:1 1 0;padding:18px 4px!important}.cd-num{font-size:38px!important}.cd-lbl{font-size:12px!important;letter-spacing:.04em!important;padding-left:0!important}}
 .gr-hint{letter-spacing:.12em!important}
 .gift-bank .clabe,.gr-acc-c{font-size:18px!important}
+
+/* ============ FUNDIDO UNIFORME ENTRE SECCIONES (pedido 6 nov) ============
+   Cada sección se funde a un mismo color de unión en sus bordes, con largo fijo
+   en px (igual en todas) y 9 paradas para que no haya escalón. El seam es una
+   franja lisa de ese color con la ola dorada. */
+:root{--joint:rgb(250,247,238);--fade:150px}
+@media (min-width:900px){:root{--fade:190px}}
+.seam{height:44px!important;background:var(--joint)!important}
+.sf{position:absolute;left:0;right:0;height:var(--fade);pointer-events:none;z-index:0}
+.sf-top{top:0;background:linear-gradient(to bottom,rgba(250,247,238,1.000) 0.0%,rgba(250,247,238,0.987) 7.1%,rgba(250,247,238,0.950) 14.3%,rgba(250,247,238,0.891) 21.4%,rgba(250,247,238,0.812) 28.6%,rgba(250,247,238,0.717) 35.7%,rgba(250,247,238,0.611) 42.9%,rgba(250,247,238,0.500) 50.0%,rgba(250,247,238,0.389) 57.1%,rgba(250,247,238,0.283) 64.3%,rgba(250,247,238,0.188) 71.4%,rgba(250,247,238,0.109) 78.6%,rgba(250,247,238,0.050) 85.7%,rgba(250,247,238,0.013) 92.9%,rgba(250,247,238,0.000) 100.0%)}
+.sf-bot{bottom:0;background:linear-gradient(to top,rgba(250,247,238,1.000) 0.0%,rgba(250,247,238,0.987) 7.1%,rgba(250,247,238,0.950) 14.3%,rgba(250,247,238,0.891) 21.4%,rgba(250,247,238,0.812) 28.6%,rgba(250,247,238,0.717) 35.7%,rgba(250,247,238,0.611) 42.9%,rgba(250,247,238,0.500) 50.0%,rgba(250,247,238,0.389) 57.1%,rgba(250,247,238,0.283) 64.3%,rgba(250,247,238,0.188) 71.4%,rgba(250,247,238,0.109) 78.6%,rgba(250,247,238,0.050) 85.7%,rgba(250,247,238,0.013) 92.9%,rgba(250,247,238,0.000) 100.0%)}
+.hero .sf-bot{z-index:-1}
+.hero-waves .hw3{fill:var(--joint)!important}
+footer .sf-top{z-index:0}
+.date-hero,footer{--fade:300px}
+@media (min-width:900px){.date-hero,footer{--fade:360px}}
+.date-hero{padding-top:calc(var(--fade) + 20px)!important;padding-bottom:calc(var(--fade) + 20px)!important}
+footer{padding-top:calc(var(--fade) + 10px)!important}
 </style>
 </head>
 <body>
 
 <!-- ENVELOPE OPENING SEQUENCE -->
 <div id="envelope-screen" role="button" aria-label="Toca para abrir la invitación" tabindex="0">
-  <img id="env-image" src="envelope.png" alt="">
+  <img id="env-image" src="envelope.jpg" alt="">
   <video id="env-video" muted playsinline preload="auto">
     <source src="envelope.mp4" type="video/mp4">
   </video>
@@ -2932,6 +2950,8 @@ body{font-variant-numeric:lining-nums;font-size:18px}
       </div>
     </div>
   </section>
+
+  <div class="seam" aria-hidden="true"></div>
 
   <!-- FOOTER -->
   <footer>
@@ -4570,6 +4590,14 @@ gsap.fromTo('.giftbox-stage > div',{opacity:0,y:34},{opacity:1,y:0,duration:1,ea
     btn.addEventListener('click',toggle);
   })();
 
+
+// ------ FUNDIDO UNIFORME: dos capas por sección (arriba / abajo) ------
+(function(){
+  document.querySelectorAll('.wrap > section, .wrap > footer').forEach(function(sec){
+    if(!sec.classList.contains('hero')){ var t=document.createElement('span'); t.className='sf sf-top'; t.setAttribute('aria-hidden','true'); sec.appendChild(t); }
+    if(sec.tagName!=='FOOTER'){ var b=document.createElement('span'); b.className='sf sf-bot'; b.setAttribute('aria-hidden','true'); sec.appendChild(b); }
+  });
+})();
 window.addEventListener('resize',()=>ScrollTrigger.refresh());
 </script>
 <script>
