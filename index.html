@@ -2255,6 +2255,8 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 .dc-card{padding-bottom:14px}
 .dc-card-cta{width:80%}
 .dcv-desc{font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.5;color:var(--ink-soft);text-align:center;margin:-6px 26px 14px}
+.hosp-photo--ico{display:grid!important;place-items:center;background:linear-gradient(160deg,#fff,rgba(167,195,226,.35));color:var(--accent)}
+.hosp-photo--ico svg{width:46%;height:46%}
 </style>
 </head>
 <body>
@@ -2286,7 +2288,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 
 <!-- MUSIC -->
 <audio id="music" preload="none" loop>
-  <source src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/boda-alma-y-luis/cancion.mp3" type="audio/mpeg">
+  <source src="cancion.mp3?v=2" type="audio/mpeg">
 </audio>
 <button class="vinyl-btn" id="music-btn" type="button" aria-label="Reproducir música de la invitación">
   <div class="vinyl-tonearm">
@@ -2517,11 +2519,16 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
         <div class="itv3-item">
           <div class="itv3-gem itv3-gem-navy"></div>
           <div class="itv3-time">4:00 pm</div>
-          <div class="itv3-ev">Recepción</div>
+          <div class="itv3-ev">Coctelería</div>
           <div class="itv3-sub">Levú Suites &amp; Events · Barra Vieja</div>
         </div>
+
+        <div class="itv3-item">
+          <div class="itv3-gem itv3-gem-mid"></div>
+          <div class="itv3-time">6:00 pm</div>
+          <div class="itv3-ev">Cena</div>
+        </div>
       </div>
-      <p class="itv3-note">El programa completo de la celebración lo compartiremos muy pronto.</p>
     </div>
   </section>
 
@@ -2600,22 +2607,22 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
             <div class="padrino-slide">
               <div class="padrino-icon"><svg viewBox="0 0 64 64"><rect x="22" y="28" width="8" height="24" rx="1.5"/><rect x="34" y="28" width="8" height="24" rx="1.5"/><line x1="26" y1="28" x2="26" y2="22"/><line x1="38" y1="28" x2="38" y2="22"/><path d="M26 22c-2.2-2.2-2.2-4.5 0-6.8 2.2 2.3 2.2 4.6 0 6.8Z"/><path d="M38 22c-2.2-2.2-2.2-4.5 0-6.8 2.2 2.3 2.2 4.6 0 6.8Z"/><line x1="17" y1="52" x2="47" y2="52"/></svg></div>
               <div class="padrino-rol">Velación y anillos</div>
-              <div class="padrino-names"><span class="pn">Fredy Martinez Mier</span><br><span class="pn">&amp; Lidice Contreras Valdivieso</span></div>
+              <div class="padrino-names"><span class="pn">Fredy Martínez Mier</span><br><span class="pn">&amp; Lídice Contreras Valdivieso</span></div>
             </div>
             <div class="padrino-slide">
               <div class="padrino-icon"><svg viewBox="0 0 64 64"><circle cx="25" cy="29" r="12"/><circle cx="39" cy="38" r="12"/><line x1="25" y1="25" x2="25" y2="33"/><line x1="21" y1="29" x2="29" y2="29"/></svg></div>
               <div class="padrino-rol">Arras</div>
-              <div class="padrino-names"><span class="pn">Nestor Sánchez Mexicano</span><br><span class="pn">&amp; Guadalupe Perez Ramos</span></div>
+              <div class="padrino-names"><span class="pn">Nestor Sánchez Mexicano</span><br><span class="pn">&amp; Guadalupe Pérez Ramos</span></div>
             </div>
             <div class="padrino-slide">
               <div class="padrino-icon"><svg viewBox="0 0 64 64"><path d="M44 24c-6.6 0-10 8-12 8s-5.4-8-12-8a8 8 0 000 16c6.6 0 10-8 12-8s5.4 8 12 8a8 8 0 000-16Z"/></svg></div>
               <div class="padrino-rol">Lazo</div>
-              <div class="padrino-names"><span class="pn">Leticia Mexicano Sánchez</span><br><span class="pn">&amp; Epifania Ignacio Peralta</span></div>
+              <div class="padrino-names"><span class="pn">Leticia Mexicano Sánchez</span><br><span class="pn">&amp; Epifanía Ignacio Peralta</span></div>
             </div>
             <div class="padrino-slide">
               <div class="padrino-icon"><svg viewBox="0 0 64 64"><path d="M32 20c-5-3-11-4-17-3v29c6-1 12 0 17 3 5-3 11-4 17-3V17c-6-1-12 0-17 3Z"/><line x1="32" y1="20" x2="32" y2="49"/><line x1="40" y1="27" x2="40" y2="37"/><line x1="36.5" y1="30.5" x2="43.5" y2="30.5"/></svg></div>
               <div class="padrino-rol">Biblia y Rosario</div>
-              <div class="padrino-names"><span class="pn"><em class="pn-tbd">Por confirmar</em></span></div>
+              <div class="padrino-names"><span class="pn">Juan Martínez Mier</span><br><span class="pn">&amp; Blanca Rodríguez</span></div>
             </div>
           </div>
         </div>
@@ -2687,7 +2694,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
       <div style="text-align:center">
         <div class="eyebrow">Si vienes de fuera</div>
         <h2>Hospedaje <em>sugerido</em></h2>
-        <p class="hs-intro">Te recomendamos estas opciones en Acapulco Diamante, de camino a la recepción en Barra Vieja.</p>
+        <p class="hs-intro">Te recomendamos estas opciones en Barra Vieja, muy cerca de la recepción.</p>
       </div>
       <div class="hs-tabs-wrap">
         <div class="hs-tabs" role="tablist" aria-label="Vista de hospedaje">
@@ -2704,45 +2711,35 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
             <div class="hosp-viewport">
               <div class="hosp-track" id="hospTrack">
               <div class="hosp-slide">
-                <div class="hosp-photo"><img src="hoteles/palacio.jpg" alt="Palacio Mundo Imperial" decoding="async"></div>
-                <div class="hosp-name">Palacio Mundo Imperial</div>
-                <div class="hosp-city">Acapulco Diamante</div>
-                <div class="hosp-dist"><strong>19 min</strong> en auto a la recepción · 19,9 km</div>
+                <div class="hosp-photo hosp-photo--ico"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 30 32 12l22 18"/><path d="M16 26v24h32V26"/><path d="M27 50V37h10v13"/><path d="M6 56c5-3 9-3 13 0s9 3 13 0 9-3 13 0 9 3 13 0"/></svg></div>
+                <div class="hosp-name">Villa Mar</div>
+                <div class="hosp-city">Barra Vieja, Acapulco</div>
+                <div class="hosp-dist"><strong>A pasos</strong> de la recepción · 0,1 km</div>
                 <div class="hosp-btns">
-                  <a class="btn-hosp" href="https://www.palaciomundoimperial.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 7V5a5 5 0 0110 0v2"/></svg> Reservar</a>
-                  <a class="btn-hosp" href="https://www.google.com/maps/search/?api=1&amp;query=Palacio%20Mundo%20Imperial%2C%20Acapulco%2C%20Guerrero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Cómo llegar</a>
+                  <a class="btn-hosp" href="tel:+525551010961"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> 55 5101 0961</a>
+                  <a class="btn-hosp" href="https://maps.app.goo.gl/hAHtRyTHhNgEoshH7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Cómo llegar</a>
                 </div>
               </div>
               <div class="hosp-slide">
-                <div class="hosp-photo"><img src="hoteles/princess.jpg" alt="Princess Mundo Imperial" decoding="async"></div>
-                <div class="hosp-name">Princess Mundo Imperial</div>
-                <div class="hosp-city">Playa Revolcadero, Acapulco</div>
-                <div class="hosp-dist"><strong>25 min</strong> en auto a la recepción · 25,6 km</div>
+                <div class="hosp-photo"><img src="hoteles/quinta-diamante.jpg" alt="Quinta Diamante Hotel &amp; Villas" decoding="async"></div>
+                <div class="hosp-name">Quinta Diamante Hotel &amp; Villas</div>
+                <div class="hosp-city">Barra Vieja, Acapulco</div>
+                <div class="hosp-dist"><strong>A 10 min</strong> de la boda</div>
                 <div class="hosp-btns">
-                  <a class="btn-hosp" href="https://www.princessmundoimperial.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 7V5a5 5 0 0110 0v2"/></svg> Reservar</a>
-                  <a class="btn-hosp" href="https://www.google.com/maps/search/?api=1&amp;query=Princess%20Mundo%20Imperial%2C%20Acapulco%2C%20Guerrero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Cómo llegar</a>
-                </div>
-              </div>
-              <div class="hosp-slide">
-                <div class="hosp-photo"><img src="hoteles/pierre.jpg" alt="Pierre Mundo Imperial" decoding="async"></div>
-                <div class="hosp-name">Pierre Mundo Imperial</div>
-                <div class="hosp-city">Playa Revolcadero, Acapulco</div>
-                <div class="hosp-dist"><strong>26 min</strong> en auto a la recepción · 26,4 km</div>
-                <div class="hosp-btns">
-                  <a class="btn-hosp" href="https://www.pierremundoimperial.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 7V5a5 5 0 0110 0v2"/></svg> Reservar</a>
-                  <a class="btn-hosp" href="https://www.google.com/maps/search/?api=1&amp;query=Pierre%20Mundo%20Imperial%2C%20Acapulco%2C%20Guerrero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Cómo llegar</a>
+                  <a class="btn-hosp" href="https://hotelquintadiamante.com/contacto/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 7V5a5 5 0 0110 0v2"/></svg> Reservar</a>
+                  <a class="btn-hosp" href="https://maps.app.goo.gl/jP9aXmqPFjDpFw6K7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Cómo llegar</a>
                 </div>
               </div>
               </div>
             </div>
-            <div class="hosp-dots" id="hospDots"><button class="active" aria-label="Hotel 1"></button><button aria-label="Hotel 2"></button><button aria-label="Hotel 3"></button></div>
+            <div class="hosp-dots" id="hospDots"><button class="active" aria-label="Hotel 1"></button><button aria-label="Hotel 2"></button></div>
           </div>
           <div class="hs-mapview" id="hsMapView" hidden>
             <div class="hs-mapcard">
               <div class="hs-map" id="hsMap" role="region" aria-label="Mapa de hospedaje, ceremonia y recepción"></div>
               <div class="hs-maphint">Toca un número para ver el hotel</div>
             </div>
-            <div class="hs-chips" id="hsChips"><button type="button" class="hs-chip" data-hs="0"><span class="hs-dot">1</span><span><b>Palacio Mundo Imperial</b><small>19 min a la recepción</small></span></button><button type="button" class="hs-chip" data-hs="1"><span class="hs-dot">2</span><span><b>Princess Mundo Imperial</b><small>25 min a la recepción</small></span></button><button type="button" class="hs-chip" data-hs="2"><span class="hs-dot">3</span><span><b>Pierre Mundo Imperial</b><small>26 min a la recepción</small></span></button></div>
+            <div class="hs-chips" id="hsChips"><button type="button" class="hs-chip" data-hs="0"><span class="hs-dot">1</span><span><b>Villa Mar</b><small>A pasos de la recepción</small></span></button><button type="button" class="hs-chip" data-hs="1"><span class="hs-dot">2</span><span><b>Quinta Diamante Hotel &amp; Villas</b><small>A 10 min de la boda</small></span></button></div>
           </div>
         </div>
       </div>
@@ -3891,7 +3888,7 @@ function startParticles(){
 }
 
 // ------ MÚSICA — empieza en 0:17 al abrir el sobre ------
-const MUSIC_START_OFFSET = 17;
+const MUSIC_START_OFFSET = 0;
 const musicEl  = document.getElementById('music');
 const musicBtn = document.getElementById('music-btn');
 
@@ -4080,7 +4077,7 @@ if(musicEl && musicEl.readyState >= 2){
 // ------ HOSPEDAJE — lista / mapa (MapLibre GL + OpenFreeMap, sin API key) ------
 (function(){
   var sec=document.getElementById('hospedaje'); if(!sec) return;
-  var HOTELS=[{"name": "Palacio Mundo Imperial", "lat": 16.7685976, "lng": -99.7740771, "min": 19, "km": 19.9}, {"name": "Princess Mundo Imperial", "lat": 16.7880815, "lng": -99.8158798, "min": 25, "km": 25.6}, {"name": "Pierre Mundo Imperial", "lat": 16.7918773, "lng": -99.8224683, "min": 26, "km": 26.4}];
+  var HOTELS=[{"name": "Villa Mar", "lat": 16.6906654, "lng": -99.6297441, "sub": "A pasos de la recepción"}, {"name": "Quinta Diamante Hotel & Villas", "lat": 16.6918207, "lng": -99.6362444, "sub": "A 10 min de la boda"}];
   var VENUES=[
     {tag:'Ceremonia',name:'Capilla María Estrella del Mar',lat:16.9017789,lng:-99.9726653},
     {tag:'Recepción',name:'Levú Suites & Events',lat:16.6899236,lng:-99.630161}
@@ -4138,7 +4135,7 @@ if(musicEl && musicEl.readyState >= 2){
       });
       HOTELS.forEach(function(h,i){
         var e=el('<div class="hs-pin" role="button" aria-label="'+h.name+'">'+(i+1)+'</div>');
-        var pop=new maplibregl.Popup({offset:20,closeButton:false}).setHTML('<div class="hs-pop"><b>'+h.name+'</b><span>'+h.min+' min a la recepción · '+String(h.km).replace('.',',')+' km</span></div>');
+        var pop=new maplibregl.Popup({offset:20,closeButton:false}).setHTML('<div class="hs-pop"><b>'+h.name+'</b><span>'+h.sub+'</span></div>');
         var m=new maplibregl.Marker({element:e}).setLngLat([h.lng,h.lat]).setPopup(pop).addTo(map);
         e.addEventListener('click',function(){ select(i,false); });
         pins.push({m:m,e:e}); b.extend([h.lng,h.lat]);
@@ -4703,7 +4700,7 @@ window.addEventListener('resize',()=>ScrollTrigger.refresh());
    - Si el archivo de la cancion falla (404, host caido, HTML en vez de mp3) se usa una de respaldo. */
 (function(){
   if(window.__elyAudio2) return; window.__elyAudio2=1;
-  var FALLBACK='https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/boda-alma-y-luis/cancion.mp3?r=2';
+  var FALLBACK='cancion.mp3?r=2';
   var forced=false, gestured=false;
   function A(){ return document.querySelector('audio'); }
   function toFallback(a){
