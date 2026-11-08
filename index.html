@@ -2346,7 +2346,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 </nav>
 <div class="nm" id="nm" role="dialog" aria-modal="true" aria-label="Menú" hidden>
   <div class="nm-head"><button type="button" class="nm-close" id="nmClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
-  <ul class="nm-list"><li><button type="button" class="nm-link" data-go="inicio"><span class="nm-n">01</span><span class="nm-t">Inicio</span></button></li><li><button type="button" class="nm-link" data-go="invitacion"><span class="nm-n">02</span><span class="nm-t">Invitación</span></button></li><li><button type="button" class="nm-link" data-go="ubicacion"><span class="nm-n">03</span><span class="nm-t">Ubicación</span></button></li><li><button type="button" class="nm-link" data-go="itinerario"><span class="nm-n">04</span><span class="nm-t">Itinerario</span></button></li><li><button type="button" class="nm-link" data-go="vestimenta"><span class="nm-n">05</span><span class="nm-t">Vestimenta</span></button></li><li><button type="button" class="nm-link" data-go="padrinos"><span class="nm-n">06</span><span class="nm-t">Padrinos</span></button></li><li><button type="button" class="nm-link" data-go="hospedaje"><span class="nm-n">07</span><span class="nm-t">Hospedaje</span></button></li><li><button type="button" class="nm-link" data-go="galeria"><span class="nm-n">08</span><span class="nm-t">Galería</span></button></li><li><button type="button" class="nm-link" data-go="regalos"><span class="nm-n">09</span><span class="nm-t">Regalos</span></button></li><li><button type="button" class="nm-link" data-go="confirmar"><span class="nm-n">10</span><span class="nm-t">Confirmar</span></button></li></ul>
+  <ul class="nm-list"><li><button type="button" class="nm-link" data-go="inicio"><span class="nm-n">01</span><span class="nm-t">Inicio</span></button></li><li><button type="button" class="nm-link" data-go="invitacion"><span class="nm-n">02</span><span class="nm-t">Invitación</span></button></li><li><button type="button" class="nm-link" data-go="ubicacion"><span class="nm-n">03</span><span class="nm-t">Ubicación</span></button></li><li><button type="button" class="nm-link" data-go="padrinos"><span class="nm-n">04</span><span class="nm-t">Padrinos</span></button></li><li><button type="button" class="nm-link" data-go="itinerario"><span class="nm-n">05</span><span class="nm-t">Itinerario</span></button></li><li><button type="button" class="nm-link" data-go="vestimenta"><span class="nm-n">06</span><span class="nm-t">Vestimenta</span></button></li><li><button type="button" class="nm-link" data-go="hospedaje"><span class="nm-n">07</span><span class="nm-t">Hospedaje</span></button></li><li><button type="button" class="nm-link" data-go="galeria"><span class="nm-n">08</span><span class="nm-t">Galería</span></button></li><li><button type="button" class="nm-link" data-go="regalos"><span class="nm-n">09</span><span class="nm-t">Regalos</span></button></li><li><button type="button" class="nm-link" data-go="confirmar"><span class="nm-n">10</span><span class="nm-t">Confirmar</span></button></li></ul>
   <p class="nm-foot">Sábado 6 de febrero de 2027 · Acapulco</p>
 </div>
 
@@ -2530,6 +2530,49 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
     </div>
   </section>
 
+  <!-- DIVIDER: bg → surface (padrinos) -->
+  <div class="seam" style="--from:var(--bg);--to:var(--surface)" aria-hidden="true"></div>
+
+  <!-- PADRINOS -->
+  <section class="section-surface padrinos bg-olas-arena" id="padrinos">
+    <div class="container">
+      <div class="eyebrow">Acompañados por</div>
+      <h2>Nuestros <em>Padrinos</em></h2>
+      <div class="padrinos-sub">con amor y bendición</div>
+      <div class="padrinos-carousel">
+        <button class="padrinos-arrow padrinos-arrow--prev" aria-label="Anterior">&#8249;</button>
+        <button class="padrinos-arrow padrinos-arrow--next" aria-label="Siguiente">&#8250;</button>
+        <div class="padrinos-viewport">
+          <div class="padrinos-track" id="padrinosTrack">
+            <div class="padrino-slide">
+              <div class="padrino-icon"><svg viewBox="0 0 64 64"><rect x="22" y="28" width="8" height="24" rx="1.5"/><rect x="34" y="28" width="8" height="24" rx="1.5"/><line x1="26" y1="28" x2="26" y2="22"/><line x1="38" y1="28" x2="38" y2="22"/><path d="M26 22c-2.2-2.2-2.2-4.5 0-6.8 2.2 2.3 2.2 4.6 0 6.8Z"/><path d="M38 22c-2.2-2.2-2.2-4.5 0-6.8 2.2 2.3 2.2 4.6 0 6.8Z"/><line x1="17" y1="52" x2="47" y2="52"/></svg></div>
+              <div class="padrino-rol">Velación y anillos</div>
+              <div class="padrino-names"><span class="pn">Fredy Martínez Mier</span><br><span class="pn">&amp; Lídice Contreras Valdivieso</span></div>
+            </div>
+            <div class="padrino-slide">
+              <div class="padrino-icon"><svg viewBox="0 0 64 64"><circle cx="25" cy="29" r="12"/><circle cx="39" cy="38" r="12"/><line x1="25" y1="25" x2="25" y2="33"/><line x1="21" y1="29" x2="29" y2="29"/></svg></div>
+              <div class="padrino-rol">Arras</div>
+              <div class="padrino-names"><span class="pn">Nestor Sánchez Mexicano</span><br><span class="pn">&amp; Guadalupe Pérez Ramos</span></div>
+            </div>
+            <div class="padrino-slide">
+              <div class="padrino-icon"><svg viewBox="0 0 64 64"><path d="M44 24c-6.6 0-10 8-12 8s-5.4-8-12-8a8 8 0 000 16c6.6 0 10-8 12-8s5.4 8 12 8a8 8 0 000-16Z"/></svg></div>
+              <div class="padrino-rol">Lazo</div>
+              <div class="padrino-names"><span class="pn">Leticia Mexicano Sánchez</span><br><span class="pn">&amp; Epifanía Ignacio Peralta</span></div>
+            </div>
+            <div class="padrino-slide">
+              <div class="padrino-icon"><svg viewBox="0 0 64 64"><path d="M32 20c-5-3-11-4-17-3v29c6-1 12 0 17 3 5-3 11-4 17-3V17c-6-1-12 0-17 3Z"/><line x1="32" y1="20" x2="32" y2="49"/><line x1="40" y1="27" x2="40" y2="37"/><line x1="36.5" y1="30.5" x2="43.5" y2="30.5"/></svg></div>
+              <div class="padrino-rol">Biblia y Rosario</div>
+              <div class="padrino-names"><span class="pn">Juan Martínez Mier</span><br><span class="pn">&amp; Blanca Rodríguez</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="padrinos-dots" id="padrinosDots">
+          <span class="active"></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- DIVIDER: paper → paper -->
   <div class="seam" style="--from:var(--paper);--to:var(--paper)" aria-hidden="true"></div>
 
@@ -2621,49 +2664,6 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
           <div class="sw-dots" aria-hidden="true"><span class="on" style="background:#a7c3e2"></span><span style="background:#FFFFFF;box-shadow:inset 0 0 0 1px #c9ccd6"></span><span style="background:#4a7bb6"></span><span style="background:#1e3a89"></span></div>
         </div>
         <div class="avoid-note">Con cariño, te pedimos evitar estos tonos el día de la boda.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIVIDER: bg → surface (padrinos) -->
-  <div class="seam" style="--from:var(--bg);--to:var(--surface)" aria-hidden="true"></div>
-
-  <!-- PADRINOS -->
-  <section class="section-surface padrinos bg-olas-arena" id="padrinos">
-    <div class="container">
-      <div class="eyebrow">Acompañados por</div>
-      <h2>Nuestros <em>Padrinos</em></h2>
-      <div class="padrinos-sub">con amor y bendición</div>
-      <div class="padrinos-carousel">
-        <button class="padrinos-arrow padrinos-arrow--prev" aria-label="Anterior">&#8249;</button>
-        <button class="padrinos-arrow padrinos-arrow--next" aria-label="Siguiente">&#8250;</button>
-        <div class="padrinos-viewport">
-          <div class="padrinos-track" id="padrinosTrack">
-            <div class="padrino-slide">
-              <div class="padrino-icon"><svg viewBox="0 0 64 64"><rect x="22" y="28" width="8" height="24" rx="1.5"/><rect x="34" y="28" width="8" height="24" rx="1.5"/><line x1="26" y1="28" x2="26" y2="22"/><line x1="38" y1="28" x2="38" y2="22"/><path d="M26 22c-2.2-2.2-2.2-4.5 0-6.8 2.2 2.3 2.2 4.6 0 6.8Z"/><path d="M38 22c-2.2-2.2-2.2-4.5 0-6.8 2.2 2.3 2.2 4.6 0 6.8Z"/><line x1="17" y1="52" x2="47" y2="52"/></svg></div>
-              <div class="padrino-rol">Velación y anillos</div>
-              <div class="padrino-names"><span class="pn">Fredy Martínez Mier</span><br><span class="pn">&amp; Lídice Contreras Valdivieso</span></div>
-            </div>
-            <div class="padrino-slide">
-              <div class="padrino-icon"><svg viewBox="0 0 64 64"><circle cx="25" cy="29" r="12"/><circle cx="39" cy="38" r="12"/><line x1="25" y1="25" x2="25" y2="33"/><line x1="21" y1="29" x2="29" y2="29"/></svg></div>
-              <div class="padrino-rol">Arras</div>
-              <div class="padrino-names"><span class="pn">Nestor Sánchez Mexicano</span><br><span class="pn">&amp; Guadalupe Pérez Ramos</span></div>
-            </div>
-            <div class="padrino-slide">
-              <div class="padrino-icon"><svg viewBox="0 0 64 64"><path d="M44 24c-6.6 0-10 8-12 8s-5.4-8-12-8a8 8 0 000 16c6.6 0 10-8 12-8s5.4 8 12 8a8 8 0 000-16Z"/></svg></div>
-              <div class="padrino-rol">Lazo</div>
-              <div class="padrino-names"><span class="pn">Leticia Mexicano Sánchez</span><br><span class="pn">&amp; Epifanía Ignacio Peralta</span></div>
-            </div>
-            <div class="padrino-slide">
-              <div class="padrino-icon"><svg viewBox="0 0 64 64"><path d="M32 20c-5-3-11-4-17-3v29c6-1 12 0 17 3 5-3 11-4 17-3V17c-6-1-12 0-17 3Z"/><line x1="32" y1="20" x2="32" y2="49"/><line x1="40" y1="27" x2="40" y2="37"/><line x1="36.5" y1="30.5" x2="43.5" y2="30.5"/></svg></div>
-              <div class="padrino-rol">Biblia y Rosario</div>
-              <div class="padrino-names"><span class="pn">Juan Martínez Mier</span><br><span class="pn">&amp; Blanca Rodríguez</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="padrinos-dots" id="padrinosDots">
-          <span class="active"></span><span></span><span></span><span></span>
-        </div>
       </div>
     </div>
   </section>
@@ -4120,7 +4120,10 @@ if(musicEl && musicEl.readyState >= 2){
     damas:{head:'Damas',desc:'Vestido largo o midi en telas frescas (lino, gasa, seda o bambula). Se sugiere calzado de tacón ancho, cuñas o sandalias elegantes para mayor comodidad en el área de jardín/playa.',items:[
       {src:'looks/dama-3.png',cap:'Vestido largo champagne'},
       {src:'looks/dama-salvia.png',cap:'Vestido largo salvia'},
-      {src:'looks/dama-terracota.png',cap:'Vestido largo terracota'}]}
+      {src:'looks/dama-terracota.png',cap:'Vestido largo terracota'},
+      {src:'looks/dama-gasa-terracota.png',cap:'Vestido midi de gasa terracota'},
+      {src:'looks/dama-gasa-salvia.png',cap:'Vestido midi de gasa salvia'},
+      {src:'looks/dama-gasa-ocre.png',cap:'Vestido midi de gasa ocre'}]}
   };
   var items=[], idx=0, last=null;
   function render(){ track.style.transform='translateX('+(-idx*100)+'%)'; cap.textContent=items[idx].cap+'  ·  '+(idx+1)+' / '+items.length; [].forEach.call(dots.children,function(d,i){ d.classList.toggle('on',i===idx); }); }
@@ -4264,7 +4267,7 @@ if(musicEl && musicEl.readyState >= 2){
   var prog=document.getElementById('nvProgress'), bar=nv&&nv.querySelector('.nv-bar');
   if(!nv) return;
   var slider=document.createElement('span'); slider.className='nv-slider'; slider.setAttribute('aria-hidden','true'); bar.appendChild(slider);
-  var IDS=['inicio','invitacion','ubicacion','itinerario','vestimenta','padrinos','hospedaje','galeria','regalos','confirmar'];
+  var IDS=['inicio','invitacion','ubicacion','padrinos','itinerario','vestimenta','hospedaje','galeria','regalos','confirmar'];
   function go(id){
     var el=document.getElementById(id); if(!el) return;
     var y=el.getBoundingClientRect().top+window.pageYOffset-(window.innerWidth>=1024?84:0);
