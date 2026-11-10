@@ -2218,7 +2218,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 /* ============ PORTADA: 3 renglones simétricos, fecha en 1 renglón ============ */
 .hero-name{display:flex!important;flex-direction:column;align-items:center;gap:0;line-height:.95!important}
 .hero-name .hero-name-p,.hero-name .hero-name-l{display:block!important;text-align:center}
-.hero-name .hero-and{display:block!important;margin:6px auto 10px!important;padding:0!important;text-align:center;line-height:1!important;font-size:clamp(46px,12vw,90px)!important}
+.hero-name .hero-and{display:block!important;margin:2px auto 6px!important;padding:0 .3em!important;text-align:center;line-height:1.05!important;font-family:var(--display)!important;font-style:italic!important;font-weight:400!important;font-size:clamp(44px,11vw,84px)!important;overflow:visible}
 .hero-date{flex-wrap:nowrap!important;white-space:nowrap;gap:clamp(8px,2.6vw,20px)!important;letter-spacing:.2em!important;font-size:clamp(18px,5.4vw,32px)!important;margin-top:44px!important}
 /* ============ COLORES SUGERIDOS: una bola que cambia de color ============ */
 .sw-cycle{flex-direction:column!important;align-items:center;gap:18px}
@@ -2280,10 +2280,11 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 .photo-band::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 120px rgba(21,43,102,.18)}
 @media (min-width:900px){.photo-band{height:min(86vh,760px);--fade:220px}}
 /* ============ DOBLE EXPOSICIÓN en la invitación ============ */
-.dbl-exp{margin:46px auto 0;width:min(300px,72vw)}
-.dbl-exp img{display:block;width:100%;height:auto;animation:dblFloat 7s ease-in-out infinite}
+.dbl-exp{margin:48px auto 0;width:min(270px,68vw);padding:9px;border:1px solid rgba(176,141,87,.55);border-radius:200px 200px 18px 18px;background:rgba(255,255,255,.45);box-shadow:0 26px 50px -28px rgba(21,43,102,.45)}
+.dbl-exp img{display:block;width:100%;height:auto;border-radius:190px 190px 12px 12px}
+.dbl-exp{animation:dblFloat 7s ease-in-out infinite}
 @keyframes dblFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
-@media (prefers-reduced-motion:reduce){.dbl-exp img{animation:none}}
+@media (prefers-reduced-motion:reduce){.dbl-exp{animation:none}}
 </style>
 </head>
 <body>
@@ -2372,7 +2373,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
           <path d="M105 20 L125 20"/>
         </g>
       </svg>
-      <div class="hero-eyebrow" data-anim="hero-eyebrow">Nos casamos</div>
+      <div class="hero-eyebrow" data-anim="hero-eyebrow">Boda Cariños</div>
       <h1 class="hero-name">
         <span class="hero-name-p" data-split="Tania"></span>
         <span class="hero-and">&amp;</span>
@@ -2411,7 +2412,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
         <span class="verse-quote">&ldquo;</span>
         <p class="verse-text">Después de un hermoso camino juntos, hemos decidido unir nuestras vidas ante Dios, frente al mar y rodeados de nuestros seres queridos.<br><br>Nos casamos, y queremos compartir este día tan especial con ustedes.</p>
         <div class="verse-sig">Tania &amp; Ali</div>
-        <figure class="dbl-exp"><img src="fotos/doble-exposicion.webp" alt="Tania y Ali" decoding="async" loading="lazy"></figure>
+        <figure class="dbl-exp"><img src="fotos/caminando.webp" alt="Tania y Ali caminando de la mano" decoding="async" loading="lazy"></figure>
       </div>
     </div>
   </section>
