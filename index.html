@@ -2285,6 +2285,23 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 .dbl-exp{animation:dblFloat 7s ease-in-out infinite}
 @keyframes dblFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
 @media (prefers-reduced-motion:reduce){.dbl-exp{animation:none}}
+
+/* ============ 10 nov: nombres en cursiva elegante ============ */
+.hero-name .hero-name-p,.hero-name .hero-name-l{font-family:var(--script)!important;font-style:normal!important;font-weight:400!important;
+  font-size:clamp(78px,21vw,170px)!important;line-height:1.05!important;padding:0 .28em!important;letter-spacing:0!important}
+.hero-name .hero-name-p span,.hero-name .hero-name-l span{letter-spacing:0}
+.hero-name .hero-and{margin:-6px auto -2px!important}
+/* ============ 10 nov: padrinos todos a la vista ============ */
+.padrinos-carousel{max-width:760px!important;overflow:visible!important}
+.padrinos-arrow,.padrinos-dots{display:none!important}
+.padrinos-viewport{overflow:visible!important;border-radius:0}
+.padrinos-track{display:grid!important;grid-template-columns:1fr 1fr;gap:14px;transform:none!important;transition:none!important}
+.padrino-slide{min-width:0!important;padding:22px 10px 20px!important;gap:8px!important;border:1px solid var(--hair-gold);border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(246,241,232,.85));box-shadow:0 14px 30px -24px rgba(21,43,102,.45)}
+.padrino-icon{width:46px!important;height:46px!important;margin-bottom:6px!important}
+.padrino-rol{font-size:12px!important;letter-spacing:.24em!important;padding-left:.24em!important;line-height:1.5}
+.padrino-names{font-size:17px!important;line-height:1.4!important}
+@media (min-width:760px){.padrinos-track{grid-template-columns:repeat(4,1fr)}.padrino-names{font-size:18px!important}}
 </style>
 </head>
 <body>
@@ -2341,13 +2358,13 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 <div class="nv-progress" id="nvProgress" aria-hidden="true"></div>
 <nav class="nv" id="nv" aria-label="Secciones">
   <div class="nv-bar">
-    <ul class="nv-links"><li><button type="button" class="nv-link" data-go="invitacion"><span class="nv-pill" aria-hidden="true"></span>Invitación</button></li><li><button type="button" class="nv-link" data-go="ubicacion"><span class="nv-pill" aria-hidden="true"></span>Ubicación</button></li><li><button type="button" class="nv-link" data-go="itinerario"><span class="nv-pill" aria-hidden="true"></span>Itinerario</button></li><li><button type="button" class="nv-link" data-go="vestimenta"><span class="nv-pill" aria-hidden="true"></span>Vestimenta</button></li><li><button type="button" class="nv-link" data-go="hospedaje"><span class="nv-pill" aria-hidden="true"></span>Hospedaje</button></li><li><button type="button" class="nv-link" data-go="galeria"><span class="nv-pill" aria-hidden="true"></span>Galería</button></li><li><button type="button" class="nv-link" data-go="regalos"><span class="nv-pill" aria-hidden="true"></span>Regalos</button></li><li><button type="button" class="nv-link" data-go="confirmar"><span class="nv-pill" aria-hidden="true"></span>Confirmar</button></li></ul>
+    <ul class="nv-links"><li><button type="button" class="nv-link" data-go="invitacion"><span class="nv-pill" aria-hidden="true"></span>Invitación</button></li><li><button type="button" class="nv-link" data-go="ubicacion"><span class="nv-pill" aria-hidden="true"></span>Ubicación</button></li><li><button type="button" class="nv-link" data-go="itinerario"><span class="nv-pill" aria-hidden="true"></span>Itinerario</button></li><li><button type="button" class="nv-link" data-go="galeria"><span class="nv-pill" aria-hidden="true"></span>Galería</button></li><li><button type="button" class="nv-link" data-go="vestimenta"><span class="nv-pill" aria-hidden="true"></span>Vestimenta</button></li><li><button type="button" class="nv-link" data-go="hospedaje"><span class="nv-pill" aria-hidden="true"></span>Hospedaje</button></li><li><button type="button" class="nv-link" data-go="regalos"><span class="nv-pill" aria-hidden="true"></span>Regalos</button></li><li><button type="button" class="nv-link" data-go="confirmar"><span class="nv-pill" aria-hidden="true"></span>Confirmar</button></li></ul>
     <button type="button" class="nv-menu" id="nvOpen" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menú</span></button>
   </div>
 </nav>
 <div class="nm" id="nm" role="dialog" aria-modal="true" aria-label="Menú" hidden>
   <div class="nm-head"><button type="button" class="nm-close" id="nmClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
-  <ul class="nm-list"><li><button type="button" class="nm-link" data-go="inicio"><span class="nm-n">01</span><span class="nm-t">Inicio</span></button></li><li><button type="button" class="nm-link" data-go="invitacion"><span class="nm-n">02</span><span class="nm-t">Invitación</span></button></li><li><button type="button" class="nm-link" data-go="ubicacion"><span class="nm-n">03</span><span class="nm-t">Ubicación</span></button></li><li><button type="button" class="nm-link" data-go="padrinos"><span class="nm-n">04</span><span class="nm-t">Padrinos</span></button></li><li><button type="button" class="nm-link" data-go="itinerario"><span class="nm-n">05</span><span class="nm-t">Itinerario</span></button></li><li><button type="button" class="nm-link" data-go="vestimenta"><span class="nm-n">06</span><span class="nm-t">Vestimenta</span></button></li><li><button type="button" class="nm-link" data-go="hospedaje"><span class="nm-n">07</span><span class="nm-t">Hospedaje</span></button></li><li><button type="button" class="nm-link" data-go="galeria"><span class="nm-n">08</span><span class="nm-t">Galería</span></button></li><li><button type="button" class="nm-link" data-go="regalos"><span class="nm-n">09</span><span class="nm-t">Regalos</span></button></li><li><button type="button" class="nm-link" data-go="confirmar"><span class="nm-n">10</span><span class="nm-t">Confirmar</span></button></li></ul>
+  <ul class="nm-list"><li><button type="button" class="nm-link" data-go="inicio"><span class="nm-n">01</span><span class="nm-t">Inicio</span></button></li><li><button type="button" class="nm-link" data-go="invitacion"><span class="nm-n">02</span><span class="nm-t">Invitación</span></button></li><li><button type="button" class="nm-link" data-go="ubicacion"><span class="nm-n">03</span><span class="nm-t">Ubicación</span></button></li><li><button type="button" class="nm-link" data-go="padrinos"><span class="nm-n">04</span><span class="nm-t">Padrinos</span></button></li><li><button type="button" class="nm-link" data-go="itinerario"><span class="nm-n">05</span><span class="nm-t">Itinerario</span></button></li><li><button type="button" class="nm-link" data-go="galeria"><span class="nm-n">06</span><span class="nm-t">Galería</span></button></li><li><button type="button" class="nm-link" data-go="vestimenta"><span class="nm-n">07</span><span class="nm-t">Vestimenta</span></button></li><li><button type="button" class="nm-link" data-go="hospedaje"><span class="nm-n">08</span><span class="nm-t">Hospedaje</span></button></li><li><button type="button" class="nm-link" data-go="regalos"><span class="nm-n">09</span><span class="nm-t">Regalos</span></button></li><li><button type="button" class="nm-link" data-go="confirmar"><span class="nm-n">10</span><span class="nm-t">Confirmar</span></button></li></ul>
   <p class="nm-foot">Sábado 6 de febrero de 2027 · Acapulco</p>
 </div>
 
@@ -2462,7 +2479,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 
   <!-- FOTO A LO ANCHO -->
   <section class="photo-band" aria-label="Tania y Ali">
-    <div class="pb-img" style="background-image:url(fotos/banda-1.webp)"></div>
+    <div class="pb-img" style="background-image:url(fotos/banda-1.webp?v=2)"></div>
   </section>
 
   <div class="seam" aria-hidden="true"></div>
@@ -2563,7 +2580,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
             <div class="padrino-slide">
               <div class="padrino-icon"><svg viewBox="0 0 64 64"><path d="M32 20c-5-3-11-4-17-3v29c6-1 12 0 17 3 5-3 11-4 17-3V17c-6-1-12 0-17 3Z"/><line x1="32" y1="20" x2="32" y2="49"/><line x1="40" y1="27" x2="40" y2="37"/><line x1="36.5" y1="30.5" x2="43.5" y2="30.5"/></svg></div>
               <div class="padrino-rol">Biblia y Rosario</div>
-              <div class="padrino-names"><span class="pn">Juan Martínez Mier</span><br><span class="pn">&amp; Blanca Rodríguez</span></div>
+              <div class="padrino-names"><span class="pn">Juan Martínez Mier</span><br><span class="pn">&amp; Blanca Estela Rodríguez Hernández</span></div>
             </div>
           </div>
         </div>
@@ -2613,6 +2630,34 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 
   <!-- DIVIDER: paper → bg -->
   <div class="seam" style="--from:var(--paper);--to:var(--bg)" aria-hidden="true"></div>
+
+  <!-- GALERÍA — carrusel 3D con espejo (boda-carmen-borja) -->
+  <section class="section-surface gallery bg-olas-arena" id="galeria">
+    <div class="container gallery-head">
+      <div class="eyebrow">Momentos</div>
+      <h2>Nuestro <em>camino</em></h2>
+      <div class="gallery-sub">recuerdos que nos trajeron aquí</div>
+    </div>
+    <div class="c3d-scene" id="c3dScene">
+      <div class="c3d-ring" id="c3dRing">
+        <div class="c3d-card"><img src="fotos/c01-t.webp" data-full="fotos/c01.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c02-t.webp" data-full="fotos/c02.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c03-t.webp" data-full="fotos/c03.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c04-t.webp" data-full="fotos/c04.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c05-t.webp" data-full="fotos/c05.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c06-t.webp" data-full="fotos/c06.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c07-t.webp" data-full="fotos/c07.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c08-t.webp" data-full="fotos/c08.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c09-t.webp?v=2" data-full="fotos/c09.webp?v=2" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c10-t.webp?v=2" data-full="fotos/c10.webp?v=2" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c11-t.webp" data-full="fotos/c11.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c12-t.webp" data-full="fotos/c12.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+      </div>
+    </div>
+    <p class="c3d-hint">Desliza para girar · toca para ver</p>
+  </section>
+
+  <div class="seam" aria-hidden="true"></div>
 
   <!-- DRESS CODE (estructura de boda-fabiola-y-fernando: botones "Ver ideas" + carrusel) -->
   <section class="section-bg dress" id="vestimenta">
@@ -2673,8 +2718,8 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
   <div class="seam" style="--from:var(--surface);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- FOTO A LO ANCHO -->
-  <section class="photo-band" aria-label="El anillo de compromiso">
-    <div class="pb-img" style="background-image:url(fotos/banda-2.webp)"></div>
+  <section class="photo-band" aria-label="Tania y Ali en la escalera">
+    <div class="pb-img" style="background-image:url(fotos/banda-2.webp?v=2)"></div>
   </section>
 
   <div class="seam" aria-hidden="true"></div>
@@ -2793,34 +2838,6 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 
   <!-- DIVIDER: paper → surface -->
   <div class="seam" style="--from:var(--surface);--to:var(--surface)" aria-hidden="true"></div>
-
-  <!-- GALERÍA — carrusel 3D con espejo (boda-carmen-borja) -->
-  <section class="section-surface gallery bg-olas-arena" id="galeria">
-    <div class="container gallery-head">
-      <div class="eyebrow">Momentos</div>
-      <h2>Nuestro <em>camino</em></h2>
-      <div class="gallery-sub">recuerdos que nos trajeron aquí</div>
-    </div>
-    <div class="c3d-scene" id="c3dScene">
-      <div class="c3d-ring" id="c3dRing">
-        <div class="c3d-card"><img src="fotos/c01-t.webp" data-full="fotos/c01.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c02-t.webp" data-full="fotos/c02.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c03-t.webp" data-full="fotos/c03.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c04-t.webp" data-full="fotos/c04.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c05-t.webp" data-full="fotos/c05.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c06-t.webp" data-full="fotos/c06.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c07-t.webp" data-full="fotos/c07.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c08-t.webp" data-full="fotos/c08.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c09-t.webp" data-full="fotos/c09.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c10-t.webp" data-full="fotos/c10.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c11-t.webp" data-full="fotos/c11.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c12-t.webp" data-full="fotos/c12.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-      </div>
-    </div>
-    <p class="c3d-hint">Desliza para girar · toca para ver</p>
-  </section>
-
-  <div class="seam" aria-hidden="true"></div>
 
   <!-- REGALOS: lluvia de sobres (boda-jeffersson-y-vanessa) + caja de regalo (boda-paola-e-ivan) -->
   <section class="section-surface gifts-jen gifts bg-olas-arena" id="regalos">
@@ -3561,7 +3578,7 @@ gsap.fromTo('.gallery-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagg
     const sl=slidesEl[i]; if(!sl) return;
     gsap.fromTo(sl.querySelectorAll('.padrino-rol, .pn'),{opacity:0,y:16},{opacity:1,y:0,duration:.7,stagger:.14,ease:'power3.out',delay:.15});
   }
-  ScrollTrigger.create({trigger:'.padrinos-carousel',start:'top 82%',once:true,onEnter:function(){namesIn(cur)}});
+  ScrollTrigger.create({trigger:'.padrinos-carousel',start:'top 82%',once:true,onEnter:function(){ if(prefersReduced) return; gsap.fromTo('.padrino-slide',{opacity:0,y:24},{opacity:1,y:0,duration:.8,stagger:.15,ease:'power3.out'}); gsap.fromTo('.padrino-slide .pn, .padrino-slide .padrino-rol',{opacity:0,y:12},{opacity:1,y:0,duration:.6,stagger:.06,delay:.25,ease:'power3.out'}); }});
   function goTo(i){
     cur=((i%total)+total)%total;
     track.style.transform='translateX(-'+cur*100+'%)';
@@ -3575,7 +3592,6 @@ gsap.fromTo('.gallery-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagg
   track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;dx=0},{passive:true});
   track.addEventListener('touchmove',function(e){dx=e.touches[0].clientX-sx},{passive:true});
   track.addEventListener('touchend',function(){if(Math.abs(dx)>40){dx<0?goTo(cur+1):goTo(cur-1)}});
-  setInterval(function(){goTo(cur+1)},5000);
   gsap.fromTo('.padrinos .eyebrow, .padrinos h2, .padrinos-sub',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.1,scrollTrigger:{trigger:'.padrinos',start:'top 78%'}});
   gsap.fromTo('.padrinos-carousel',{opacity:0,y:30},{opacity:1,y:0,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.padrinos-carousel',start:'top 85%'}});
 })();
@@ -4268,7 +4284,7 @@ if(musicEl && musicEl.readyState >= 2){
   var prog=document.getElementById('nvProgress'), bar=nv&&nv.querySelector('.nv-bar');
   if(!nv) return;
   var slider=document.createElement('span'); slider.className='nv-slider'; slider.setAttribute('aria-hidden','true'); bar.appendChild(slider);
-  var IDS=['inicio','invitacion','ubicacion','padrinos','itinerario','vestimenta','hospedaje','galeria','regalos','confirmar'];
+  var IDS=['inicio','invitacion','ubicacion','padrinos','itinerario','galeria','vestimenta','hospedaje','regalos','confirmar'];
   function go(id){
     var el=document.getElementById(id); if(!el) return;
     var y=el.getBoundingClientRect().top+window.pageYOffset-(window.innerWidth>=1024?84:0);
