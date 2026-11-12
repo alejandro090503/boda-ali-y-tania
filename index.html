@@ -2306,6 +2306,19 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 .padres-names{font-size:clamp(19px,2.6vw,22px)!important;line-height:1.55!important}
 .padres-rol{font-size:13px!important;font-weight:700!important}
 .padres-col{animation:cardFloat 6s ease-in-out infinite}.padres-col:last-child{animation-delay:-3s}
+
+/* ============ 12 nov ============ */
+/* tarjetas de ubicación: nunca más anchas que la pantalla */
+.locs-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))!important}
+.loc-card{padding-left:clamp(20px,6vw,40px)!important;padding-right:clamp(20px,6vw,40px)!important}
+/* franjas de foto: centradas en la pareja; en celular con menos recorte */
+.photo-band .pb-img{background-position:var(--fx,50%) var(--fy,50%)!important}
+@media (max-width:700px){
+  .photo-band{height:min(118vw,560px)!important;--fade:120px}
+  .photo-band .pb-img{top:-6%!important;bottom:-6%!important}
+}
+/* & del pie de página completo */
+.footer-names .amp{font-family:var(--display)!important;font-style:italic!important;padding:0 .12em}
 </style>
 </head>
 <body>
@@ -2433,7 +2446,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
         <span class="verse-quote">&ldquo;</span>
         <p class="verse-text">Después de un hermoso camino juntos, hemos decidido unir nuestras vidas ante Dios, frente al mar y rodeados de nuestros seres queridos.<br><br>Nos casamos, y queremos compartir este día tan especial con ustedes.</p>
         <div class="verse-sig">Tania &amp; Ali</div>
-        <figure class="dbl-exp"><img src="fotos/caminando.webp" alt="Tania y Ali caminando de la mano" decoding="async" loading="lazy"></figure>
+        <figure class="dbl-exp"><img src="fotos/caminando.webp?v=2" alt="Tania y Ali caminando de la mano" decoding="async" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -2483,7 +2496,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 
   <!-- FOTO A LO ANCHO -->
   <section class="photo-band" aria-label="Tania y Ali">
-    <div class="pb-img" style="background-image:url(fotos/banda-1.webp?v=2)"></div>
+    <div class="pb-img" style="background-image:url(fotos/banda-1.webp?v=2);--fx:53%;--fy:34%"></div>
   </section>
 
   <div class="seam" aria-hidden="true"></div>
@@ -2521,7 +2534,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
           <div class="loc-name">Capilla María Estrella del Mar</div>
           <div class="loc-time">1:00 pm</div>
           <div class="loc-addr">Acapulco, Guerrero</div>
-          <a class="loc-btn" href="https://www.google.com/maps/place/Capilla+Maria+Estrella+del+Mar/@16.9017789,-99.9726653,17z" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <a class="loc-btn" href="https://www.google.com/maps/place/Capilla+Maria+Estrella+del+Mar/@16.90174,-99.9726878,17z/data=!4m6!3m5!1s0x85caf99e5c01a265:0x326f6222d54b61c8!8m2!3d16.90174!4d-99.9726878" target="_blank" rel="noopener">Abrir en Google Maps</a>
         </article>
         <article class="loc-card" data-tilt>
           <span class="washi washi--l"></span>
@@ -2661,23 +2674,23 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
   <section class="section-surface gallery bg-olas-arena" id="galeria">
     <div class="container gallery-head">
       <div class="eyebrow">Momentos</div>
-      <h2>Nuestro <em>camino</em></h2>
-      <div class="gallery-sub">recuerdos que nos trajeron aquí</div>
+      <h2>Nuestra <em>esencia</em></h2>
+      <div class="gallery-sub">el reflejo de lo que somos cuando estamos juntos</div>
     </div>
     <div class="c3d-scene" id="c3dScene">
       <div class="c3d-ring" id="c3dRing">
         <div class="c3d-card"><img src="fotos/c01-t.webp" data-full="fotos/c01.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
         <div class="c3d-card"><img src="fotos/c02-t.webp" data-full="fotos/c02.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c03-t.webp" data-full="fotos/c03.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c03-t.webp?v=3" data-full="fotos/c03.webp?v=3" alt="Tania y Ali" decoding="async" draggable="false"></div>
         <div class="c3d-card"><img src="fotos/c04-t.webp" data-full="fotos/c04.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c05-t.webp" data-full="fotos/c05.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c05-t.webp?v=3" data-full="fotos/c05.webp?v=3" alt="Tania y Ali" decoding="async" draggable="false"></div>
         <div class="c3d-card"><img src="fotos/c06-t.webp" data-full="fotos/c06.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
         <div class="c3d-card"><img src="fotos/c07-t.webp" data-full="fotos/c07.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c08-t.webp" data-full="fotos/c08.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c08-t.webp?v=3" data-full="fotos/c08.webp?v=3" alt="Tania y Ali" decoding="async" draggable="false"></div>
         <div class="c3d-card"><img src="fotos/c09-t.webp?v=2" data-full="fotos/c09.webp?v=2" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c10-t.webp?v=2" data-full="fotos/c10.webp?v=2" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c10-t.webp?v=3" data-full="fotos/c10.webp?v=3" alt="Tania y Ali" decoding="async" draggable="false"></div>
         <div class="c3d-card"><img src="fotos/c11-t.webp" data-full="fotos/c11.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c12-t.webp" data-full="fotos/c12.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c12-t.webp?v=3" data-full="fotos/c12.webp?v=3" alt="Tania y Ali" decoding="async" draggable="false"></div>
       </div>
     </div>
     <p class="c3d-hint">Desliza para girar · toca para ver</p>
@@ -2745,7 +2758,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 
   <!-- FOTO A LO ANCHO -->
   <section class="photo-band" aria-label="Tania y Ali en la escalera">
-    <div class="pb-img" style="background-image:url(fotos/banda-2.webp?v=2)"></div>
+    <div class="pb-img" style="background-image:url(fotos/banda-2.webp?v=2);--fx:76%;--fy:45%"></div>
   </section>
 
   <div class="seam" aria-hidden="true"></div>
@@ -3059,7 +3072,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 
   <!-- FOTO A LO ANCHO -->
   <section class="photo-band" aria-label="Tania y Ali desde lo alto">
-    <div class="pb-img" style="background-image:url(fotos/banda-3.webp)"></div>
+    <div class="pb-img" style="background-image:url(fotos/banda-3.webp);--fx:50%;--fy:50%"></div>
   </section>
 
   <div class="seam" aria-hidden="true"></div>
@@ -4026,7 +4039,7 @@ function setMusicStart(){
   try { musicEl.currentTime = MUSIC_START_OFFSET; } catch(e){}
 }
 if(musicEl){
-  musicEl.addEventListener('loadedmetadata', setMusicStart, {once:true});
+  musicEl.addEventListener('loadedmetadata', function(){ if(musicEl.paused) setMusicStart(); }, {once:true});
   musicEl.addEventListener('play',  ()=> musicBtn && musicBtn.classList.add('is-playing'));
   musicEl.addEventListener('pause', ()=> musicBtn && musicBtn.classList.remove('is-playing'));
   musicEl.addEventListener('ended', ()=>{ setMusicStart(); musicEl.play().catch(()=>{}); });
@@ -4038,7 +4051,8 @@ function showMusicBtn(){
 function startMusic(){
   showMusicBtn();
   if(!musicEl) return;
-  setMusicStart();
+  if(!musicEl.paused && musicEl.currentTime > 0.3) return;  /* ya suena desde "Toca para abrir": no reiniciar */
+  if(musicEl.currentTime < 0.3) setMusicStart();
   const p = musicEl.play();
   if(p && typeof p.catch === 'function'){
     p.catch(()=>{});
@@ -4058,6 +4072,7 @@ if(musicBtn){
 
 function tryAutoMusic(){
   if(!musicEl) return;
+  if(!musicEl.paused) return;  /* ya arrancó con el toque del sobre: no volver a 0 */
   setMusicStart();
   showMusicBtn();
   var p = musicEl.play();
@@ -4846,7 +4861,7 @@ gsap.fromTo('.gallery-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagg
 (function(){
   if(prefersReduced) return;
   document.querySelectorAll('.photo-band .pb-img').forEach(function(el){
-    gsap.fromTo(el,{yPercent:-7,scale:1.08},{yPercent:7,scale:1,ease:'none',scrollTrigger:{trigger:el.parentNode,start:'top bottom',end:'bottom top',scrub:true}});
+    var small=window.innerWidth<700; gsap.fromTo(el,{yPercent:small?-4:-7,scale:small?1.02:1.08},{yPercent:small?4:7,scale:1,ease:'none',scrollTrigger:{trigger:el.parentNode,start:'top bottom',end:'bottom top',scrub:true}});
   });
   gsap.fromTo('.dbl-exp',{opacity:0,y:30,scale:.94},{opacity:1,y:0,scale:1,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:'.dbl-exp',start:'top 88%',once:true}});
 })();
