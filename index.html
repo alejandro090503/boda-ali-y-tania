@@ -2319,6 +2319,16 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
 }
 /* & del pie de página completo */
 .footer-names .amp{font-family:var(--display)!important;font-style:italic!important;padding:0 .12em}
+
+/* ============ 13 nov ============ */
+/* & del pie: mismo tono y tamaño que los nombres */
+.footer-names .amp{color:#F8F5EC!important;font-size:.6em!important;vertical-align:.12em;padding:0 .2em!important}
+/* & de la firma del verso completa */
+.verse-sig .amp{font-family:var(--display);font-style:italic;font-size:.72em;padding:0 .15em;vertical-align:.08em}
+/* contador: que quepa "Segundos" */
+@media (max-width:520px){.cd-lbl{font-size:10.5px!important;letter-spacing:.02em!important}}
+/* franja aérea en celular: pareja al centro */
+@media (max-width:700px){.photo-band .pb-img[style*="banda-1.webp"]{background-image:url(fotos/banda-1m.webp)!important;background-position:50% 50%!important}}
 </style>
 </head>
 <body>
@@ -2445,7 +2455,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
         </svg>
         <span class="verse-quote">&ldquo;</span>
         <p class="verse-text">Después de un hermoso camino juntos, hemos decidido unir nuestras vidas ante Dios, frente al mar y rodeados de nuestros seres queridos.<br><br>Nos casamos, y queremos compartir este día tan especial con ustedes.</p>
-        <div class="verse-sig">Tania &amp; Ali</div>
+        <div class="verse-sig">Tania <span class="amp">&amp;</span> Ali</div>
         <figure class="dbl-exp"><img src="fotos/caminando.webp?v=2" alt="Tania y Ali caminando de la mano" decoding="async" loading="lazy"></figure>
       </div>
     </div>
@@ -2483,7 +2493,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
       <h2>Contamos <em>los</em> días</h2>
       <div class="countdown-sub">hasta el gran momento</div>
       <div class="countdown-grid" id="cd">
-        <div class="cd-block"><div class="cd-num" id="cd-d">000</div><div class="cd-lbl">Días</div></div>
+        <div class="cd-block"><div class="cd-num" id="cd-d">00</div><div class="cd-lbl">Días</div></div>
         <div class="cd-block"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Horas</div></div>
         <div class="cd-block"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">Minutos</div></div>
         <div class="cd-block"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Segundos</div></div>
@@ -2534,7 +2544,7 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
           <div class="loc-name">Capilla María Estrella del Mar</div>
           <div class="loc-time">1:00 pm</div>
           <div class="loc-addr">Acapulco, Guerrero</div>
-          <a class="loc-btn" href="https://www.google.com/maps/place/Capilla+Maria+Estrella+del+Mar/@16.90174,-99.9726878,17z/data=!4m6!3m5!1s0x85caf99e5c01a265:0x326f6222d54b61c8!8m2!3d16.90174!4d-99.9726878" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <a class="loc-btn" href="https://maps.google.com/?cid=3634231326058176968" target="_blank" rel="noopener">Abrir en Google Maps</a>
         </article>
         <article class="loc-card" data-tilt>
           <span class="washi washi--l"></span>
@@ -2686,10 +2696,10 @@ footer{padding-top:calc(var(--fade) + 10px)!important}
         <div class="c3d-card"><img src="fotos/c05-t.webp?v=3" data-full="fotos/c05.webp?v=3" alt="Tania y Ali" decoding="async" draggable="false"></div>
         <div class="c3d-card"><img src="fotos/c06-t.webp" data-full="fotos/c06.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
         <div class="c3d-card"><img src="fotos/c07-t.webp" data-full="fotos/c07.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c08-t.webp?v=3" data-full="fotos/c08.webp?v=3" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c08-t.webp?v=4" data-full="fotos/c08.webp?v=4" alt="Tania y Ali" decoding="async" draggable="false"></div>
         <div class="c3d-card"><img src="fotos/c09-t.webp?v=2" data-full="fotos/c09.webp?v=2" alt="Tania y Ali" decoding="async" draggable="false"></div>
         <div class="c3d-card"><img src="fotos/c10-t.webp?v=3" data-full="fotos/c10.webp?v=3" alt="Tania y Ali" decoding="async" draggable="false"></div>
-        <div class="c3d-card"><img src="fotos/c11-t.webp" data-full="fotos/c11.webp" alt="Tania y Ali" decoding="async" draggable="false"></div>
+        <div class="c3d-card"><img src="fotos/c11-t.webp?v=4" data-full="fotos/c11.webp?v=4" alt="Tania y Ali" decoding="async" draggable="false"></div>
         <div class="c3d-card"><img src="fotos/c12-t.webp?v=3" data-full="fotos/c12.webp?v=3" alt="Tania y Ali" decoding="async" draggable="false"></div>
       </div>
     </div>
@@ -3417,7 +3427,7 @@ function flipOn(el,newVal){
 }
 function tick(){
   const d = Math.max(0, countTarget - Date.now());
-  const dd = String(Math.floor(d/86400000)).padStart(3,'0');
+  const dd = String(Math.floor(d/86400000));
   const hh = String(Math.floor(d%86400000/3600000)).padStart(2,'0');
   const mm = String(Math.floor(d%3600000/60000)).padStart(2,'0');
   const ss = String(Math.floor(d%60000/1000)).padStart(2,'0');
